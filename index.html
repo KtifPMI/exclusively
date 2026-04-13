@@ -277,7 +277,7 @@
                 </div>
                 <div class="contact-item">
                     <label>Email</label>
-                    <a href="mailto:aleksej.grigori3v@yandex.ru">info@exclusively.ru</a>
+                    <a href="mailto:aleksej.grigori3v@yandex.ru">aleksej.grigori3v@yandex.ru</a>
                 </div>
                 <div class="contact-item">
                     <label>Адрес</label>
@@ -288,20 +288,20 @@
                     <span>Пн-Сб: 10:00 - 19:00</span>
                 </div>
             </div>
-            <form class="contact-form" action="mailto:aleksej.grigori3v@yandex.ru" method="post" enctype="text/plain">
+            <form class="contact-form" action="https://formspree.io/f/mbdqjgeq" method="POST">
                 <div class="form-row">
                     <div class="form-group">
                         <label>Ваше имя</label>
-                        <input type="text" placeholder="Иван Иванов" required>
+                        <input type="text" name="name" placeholder="Иван Иванов" required>
                     </div>
                     <div class="form-group">
                         <label>Телефон</label>
-                        <input type="tel" placeholder="+7 (900) 123-45-67" required>
+                        <input type="tel" name="phone" placeholder="+7 (900) 123-45-67" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Тип мебели</label>
-                    <select>
+                    <select name="type">
                         <option value="">Выберите тип...</option>
                         <option>Кухня</option>
                         <option>Прихожая</option>
@@ -314,7 +314,7 @@
                 </div>
                 <div class="form-group">
                     <label>Сообщение</label>
-                    <textarea placeholder="Опишите ваш проект..."></textarea>
+                    <textarea name="message" placeholder="Опишите ваш проект..."></textarea>
                 </div>
                 <button type="submit" class="btn btn-fill" style="width: 100%;">Отправить заявку</button>
             </form>
@@ -347,7 +347,7 @@
             <div class="footer-col">
                 <h4>Контакты</h4>
                 <a href="tel:+79001234567">+7 (900) 123-45-67</a>
-                <a href="mailto:aleksej.grigori3v@yandex.ru">info@exclusively.ru</a>
+                <a href="mailto:aleksej.grigori3v@yandex.ru">aleksej.grigori3v@yandex.ru</a>
             </div>
         </div>
         <div class="footer-bottom">&copy; 2024 &laquo;Эксклюзивно&raquo;. Все права защищены.</div>
