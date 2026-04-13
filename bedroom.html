@@ -58,12 +58,12 @@
         .modal-close:hover { background: #fff; color: #000; }
         .modal-content { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
         .modal-gallery { display: grid; grid-template-columns: 1fr; gap: 16px; margin-bottom: 32px; }
-        .modal-main-img { width: 100%; height: 700px; object-fit: cover; display: block; }
+        .modal-main-img { width: 100%; height: 450px; object-fit: cover; display: block; }
         .modal-thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
         .modal-thumb { width: 100%; height: 80px; object-fit: cover; cursor: pointer; opacity: 0.6; transition: opacity 0.25s; }
         .modal-thumb:hover, .modal-thumb.active { opacity: 1; }
         .modal-title { font-size: 42px; font-weight: 300; margin-bottom: 20px; color: #fff; }
-        .modal-desc { font-size: 20px; color: #ccc; line-height: 1.7; margin-bottom: 32px; }
+        .modal-desc { font-size: 18px; color: #ccc; line-height: 1.8; margin-bottom: 32px; }
         .modal-meta { font-size: 14px; color: #888; margin-bottom: 32px; }
         .product-card { cursor: pointer; transition: transform 0.25s; }
         .product-card:hover { transform: translateY(-4px); }
@@ -185,12 +185,12 @@
 
 <script>
 const products = [
-    { title: "Кровать с изголовьем", desc: "Мягкое изголовье, основание в комплекте", meta: "Материалы: Ткань, массив", imgs: ["https://images.unsplash.com/photo-1505693416388-b0346efee539?w=800&q=80"] },
-    { title: "Прикроватные тумбочки", desc: "Парные тумбочки с ящиками", meta: "Материалы: Массив", imgs: ["https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&q=80"] },
-    { title: "Комод", desc: "Вместительный комод с зеркалом", meta: "Материалы: Массив", imgs: ["https://images.unsplash.com/photo-1558997519-83ea9252edf8?w=800&q=80"] },
-    { title: "Кровать-чердак", desc: "Двухъярусная кровать", meta: "Материалы: Массив", imgs: ["https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?w=800&q=80"] },
-    { title: "Туалетный столик", desc: "Стильный столик с зеркалом", meta: "Материалы: Массив, зеркало", imgs: ["https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?w=800&q=80"] },
-    { title: "Шкаф", desc: "Вместительный шкаф с дверьми", meta: "Материалы: ЛДСП", imgs: ["https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80"] }
+    { title: "Кровать с изголовьем", desc: "Кровать 160x200 с мягким изголовьем 120 см в высоту. Обивка из велюра или кожи на выбор. Встроенное основание с ламелями. Подъёмный механизм для хранения постельного белья. Изголовье с мягкими каналами. Изножье ниже основного уровня. Ночные столики в комплекте. Выбор цвета обивки.", meta: "Материалы: Ткань, массив / Размер: 160x200 / Основание: ламели", imgs: ["https://images.unsplash.com/photo-1505693416388-b0346efee539?w=800&q=80"] },
+    { title: "Прикроватные тумбочки", desc: "Парные тумбочки 50x45 см с двумя выдвижными ящиками. Ящики на направляющих с доводчиками. Верхняя крышка из камня или массива. Открытая полка для книг. Встроенная беспроводная зарядка. USB-розетка в ящике. Ручки или push-to-open. Цвет в тон кровати.", meta: "Материалы: Массив / Ящики: доводчики / Фурнитура: выбор", imgs: ["https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&q=80"] },
+    { title: "Комод", desc: "Комод 140x90 см с 6 ящиками. Три больших и три малых ящика. Фасады с кантом или без. Ручки из латуни или хрома. Внутри разделители для модулей. Топ из мрамора или кварца. Зеркало во всю высоту можно повесить сверху. Подсветка зеркала.", meta: "Материалы: Массив / Топ: камень / Ящики: 6 шт", imgs: ["https://images.unsplash.com/photo-1558997519-83ea9252edf8?w=800&q=80"] },
+    { title: "Кровать-чердак", desc: "Двухъярусная кровать 90x200 для детей и подростков. Верхнее спальное место с защитным бортиком. Нижняя зона для рабочего стола или дивана. Лестница со ступенями-ящиками. Нагрузка до 120 кг на ярус. Возможно добавить горку. Безопасные закруглённые углы.", meta: "Материалы: Массив / Размер: 90x200 / Нагрузка: 120 кг", imgs: ["https://images.unsplash.com/photo-1617325247661-675ab4b64ae2?w=800&q=80"] },
+    { title: "Туалетный столик", desc: "Туалетный столик 120x50 см с тремя ящиками. Большое зеркало с LED-подсветкой и антизапотеванием. Встроенные розетки и USB. Выдвижной столик для косметики. Подсветка зеркала трёхцветная. Кресло в комплекте. Топ из камня. Ящики с доводчиками.", meta: "Материалы: Массив, зеркало / Подсветка: LED / Ящики: 3 шт", imgs: ["https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?w=800&q=80"] },
+    { title: "Шкаф", desc: "Вместительный шкаф 200x240 см с распашными дверьми. Внутри: штанги, полки, выдвижные ящики. Зеркальная дверь изнутри. LED-подсветка при открытии. Двери с доводчиками. Модульная система внутри. Возможно изготовить встроенным.", meta: "Материалы: ЛДСП / Размер: 200x240 / Двери: распашные", imgs: ["https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80"] }
 ];
 
 function openModal(i) {

@@ -58,12 +58,12 @@
         .modal-close:hover { background: #fff; color: #000; }
         .modal-content { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
         .modal-gallery { display: grid; grid-template-columns: 1fr; gap: 16px; margin-bottom: 32px; }
-        .modal-main-img { width: 100%; height: 700px; object-fit: cover; display: block; }
+        .modal-main-img { width: 100%; height: 450px; object-fit: cover; display: block; }
         .modal-thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
         .modal-thumb { width: 100%; height: 80px; object-fit: cover; cursor: pointer; opacity: 0.6; transition: opacity 0.25s; }
         .modal-thumb:hover, .modal-thumb.active { opacity: 1; }
         .modal-title { font-size: 42px; font-weight: 300; margin-bottom: 20px; color: #fff; }
-        .modal-desc { font-size: 20px; color: #ccc; line-height: 1.7; margin-bottom: 32px; }
+        .modal-desc { font-size: 18px; color: #ccc; line-height: 1.8; margin-bottom: 32px; }
         .modal-meta { font-size: 14px; color: #888; margin-bottom: 32px; }
         .product-card { cursor: pointer; transition: transform 0.25s; }
         .product-card:hover { transform: translateY(-4px); }
@@ -185,12 +185,12 @@
 
 <script>
 const products = [
-    { title: "Рабочий стол", desc: "Просторный стол с ящиками", meta: "Материалы: Массив", imgs: ["https://images.unsplash.com/photo-1518457900634-6c6c7a579410?w=800&q=80"] },
-    { title: "Стеллаж", desc: "Напольный стеллаж для документов", meta: "Материалы: Массив", imgs: ["https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80"] },
-    { title: "Кресло", desc: "Эргономичное кресло", meta: "Материалы: Ткань", imgs: ["https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80"] },
-    { title: "Настенные полки", desc: "Полки для книг и документов", meta: "Материалы: МДФ", imgs: ["https://images.unsplash.com/photo-1505693314120-0d443867891c?w=800&q=80"] },
-    { title: "Тумба под принтер", desc: "Тумба с ящиками", meta: "Материалы: ЛДСП", imgs: ["https://images.unsplash.com/photo-1558997519-83ea9252edf8?w=800&q=80"] },
-    { title: "Кабинет под ключ", desc: "Комплексное решение", meta: "Материалы: Массив, МДФ", imgs: ["https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80"] }
+    { title: "Рабочий стол", desc: "Рабочий стол 160x80 см с L-образной консолью. Четыре выдвижных ящика с доводчиками. Ниша для системного блока. Отверстия для кабелей. Надстройка с полками. Подлокотники встроены. Высота столешницы 75 см. Возможно добавить кресло. Топ из износостойкого материала.", meta: "Материалы: Массив / Размер: 160x80 / Ящики: 4 шт", imgs: ["https://images.unsplash.com/photo-1518457900634-6c6c7a579410?w=800&q=80"] },
+    { title: "Стеллаж", desc: "Напольный стеллаж 180x90 см с 5 полками. Регулируемые полки. Закрытая нижняя секция с дверью. Открытая верхняя для книг. Ниша для ТВ-монитора. LED-подсветка полок. Нагрузка 40 кг на полку. Возможно составить из нескольких секций.", meta: "Материалы: Массив / Размер: 180x90 / Нагрузка: 40 кг", imgs: ["https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80"] },
+    { title: "Кресло", desc: "Эргономичное кресло для руководителя. Регулировка высоты и наклона. Поясничный валик. Подголовник съёмный. Подлокотники 3D. Крестовина на колёсах. Обивка из износостойкой ткани. Максимальная нагрузка 150 кг. Гарантия 5 лет.", meta: "Материалы: Ткань / Регулировки: 5 / Нагрузка: 150 кг", imgs: ["https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80"] },
+    { title: "Настенные полки", desc: "Комплект полок для кабинета. Возможно 3-5 полок разного размера. Скрытое или открытое крепление. Полки из массива или МДФ. Ниша для папок. LED-подсветка. Нагрузка 20 кг на полку. Идеально для документов и декора. Профессиональный монтаж.", meta: "Материалы: МДФ / Нагрузка: 20 кг / Монтаж: включён", imgs: ["https://images.unsplash.com/photo-1505693314120-0d443867891c?w=800&q=80"] },
+    { title: "Тумба под принтер", desc: "Тумба 60x55 см с двумя выдвижными ящиками. Ниша для принтера формата А3. Открытая полка для бумаги. Ролики с фиксаторами. Кабель-канал для проводов. Топ из устойчивого материала. Возможно изготовить под встроенную технику.", meta: "Материалы: ЛДСП / Размер: 60x55 / Ящики: 2 шт", imgs: ["https://images.unsplash.com/photo-1558997519-83ea9252edf8?w=800&q=80"] },
+    { title: "Кабинет под ключ", desc: "Комплексное решение для кабинета руководителя. Рабочий стол 180 см, кресло, стеллаж, тумба. Единый стиль и цвет. Профессиональная сборка. Возможность добавить переговорную зону. Индивидуальный проект. Доставка и сборка включены. Гарантия 5 лет.", meta: "Материалы: Массив, МДФ / Комплекс: полный / Гарантия: 5 лет", imgs: ["https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80"] }
 ];
 
 function openModal(i) {

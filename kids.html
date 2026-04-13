@@ -58,12 +58,12 @@
         .modal-close:hover { background: #fff; color: #000; }
         .modal-content { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
         .modal-gallery { display: grid; grid-template-columns: 1fr; gap: 16px; margin-bottom: 32px; }
-        .modal-main-img { width: 100%; height: 700px; object-fit: cover; display: block; }
+        .modal-main-img { width: 100%; height: 450px; object-fit: cover; display: block; }
         .modal-thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
         .modal-thumb { width: 100%; height: 80px; object-fit: cover; cursor: pointer; opacity: 0.6; transition: opacity 0.25s; }
         .modal-thumb:hover, .modal-thumb.active { opacity: 1; }
         .modal-title { font-size: 42px; font-weight: 300; margin-bottom: 20px; color: #fff; }
-        .modal-desc { font-size: 20px; color: #ccc; line-height: 1.7; margin-bottom: 32px; }
+        .modal-desc { font-size: 18px; color: #ccc; line-height: 1.8; margin-bottom: 32px; }
         .modal-meta { font-size: 14px; color: #888; margin-bottom: 32px; }
         .product-card { cursor: pointer; transition: transform 0.25s; }
         .product-card:hover { transform: translateY(-4px); }
@@ -185,12 +185,12 @@
 
 <script>
 const products = [
-    { title: "Кровать-чердак", desc: "Двухъярусная кровать с рабочей зоной", meta: "Материалы: Массив", imgs: ["https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80"] },
-    { title: "Письменный стол", desc: "Удобный стол для занятий", meta: "Материалы: Массив", imgs: ["https://images.unsplash.com/photo-1518457900634-6c6c7a579410?w=800&q=80"] },
-    { title: "Детский шкаф", desc: "Шкаф с яркими фасадами", meta: "Материалы: ЛДСП", imgs: ["https://images.unsplash.com/photo-1558997519-83ea9252edf8?w=800&q=80"] },
-    { title: "Комод для игрушек", desc: "Низкий комод с ящиками", meta: "Материалы: ЛДСП", imgs: ["https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80"] },
-    { title: "Книжная полка", desc: "Настенная полка для книг", meta: "Материалы: МДФ", imgs: ["https://images.unsplash.com/photo-1505693314120-0d443867891c?w=800&q=80"] },
-    { title: "Детская кровать", desc: "Односпальная кровать с бортиками", meta: "Материалы: Массив", imgs: ["https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80"] }
+    { title: "Кровать-чердак", desc: "Двухъярусная кровать-чердак 90x200 для комнаты 12-15 кв.м. Верхнее спальное место с защитным бортиком 40 см. Нижняя зона для рабочего стола и кресла. Лестница с выдвижными ящиками-ступенями. Нагрузка 120 кг на верхний ярус. Безопасные закруглённые углы. Возможно добавить горку или верёвочную лестницу.", meta: "Материалы: Массив / Размер: 90x200 / Нагрузка: 120 кг", imgs: ["https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80"] },
+    { title: "Письменный стол", desc: "Письменный стол 120x60 см с выдвижной полкой для клавиатуры. Надстройка с полками для книг и принадлежностей. Выдвижной ящик для канцелярии. Отверстие для проводов. Регулируемые ножки. Высота столешницы 75 см соответствует росту ребёнка. Возможно добавить кресло.", meta: "Материалы: Массив / Размер: 120x60 / Высота: 75 см", imgs: ["https://images.unsplash.com/photo-1518457900634-6c6c7a579410?w=800&q=80"] },
+    { title: "Детский шкаф", desc: "Детский шкаф 120x180 см с яркими фасадами. Внутри: штанга для вешалок, полки, выдвижные ящики. Фасады в любом цвете по RAL. Ручки в форме животных или звёзд. Зеркальная вставка опционально. Безопасные углы. Выдвижные ящики с доводчиками.", meta: "Материалы: ЛДСП / Размер: 120x180 / Цвет: любой", imgs: ["https://images.unsplash.com/photo-1558997519-83ea9252edf8?w=800&q=80"] },
+    { title: "Комод для игрушек", desc: "Низкий комод 80x50 см с 4 выдвижными ящиками. Ящики разного размера для сортировки игрушек. Высота 60 см, ребёнок может сам доставать вещи. Мягкий аммортизатор на ящиках. Ручки-петли или без ручек. Цвета: синий, розовый, зелёный, жёлтый. Возможно с изображением любимых героев.", meta: "Материалы: ЛДСП / Размер: 80x50 / Ящики: 4 шт", imgs: ["https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80"] },
+    { title: "Книжная полка", desc: "Настенная полка 80x25 см. Скрытое крепление. Возможно несколько секций. Максимальная нагрузка 15 кг. Из МДФ или массива. Цвет в тон детской. Полка для книг с ограничителем.LED-подсветка опционально.", meta: "Материалы: МДФ / Размер: 80x25 / Нагрузка: 15 кг", imgs: ["https://images.unsplash.com/photo-1505693314120-0d443867891c?w=800&q=80"] },
+    { title: "Детская кровать", desc: "Односпальная кровать 90x200 с защитными бортиками. Основание с ламелями. Ящик для белья под кроватью. Изголовье и изножье в одном стиле. Возможно добавить балдахин. Выбор цвета. Рисунок на изголовье опционально. Растёт вместе с ребёнком.", meta: "Материалы: Массив / Размер: 90x200 / Бортик: да", imgs: ["https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80"] }
 ];
 
 function openModal(i) {

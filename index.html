@@ -163,12 +163,12 @@
         .modal-close:hover { background: #fff; color: #000; }
         .modal-content { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
         .modal-gallery { display: grid; grid-template-columns: 1fr; gap: 16px; margin-bottom: 32px; }
-        .modal-main-img { width: 100%; height: 700px; object-fit: cover; display: block; }
+        .modal-main-img { width: 100%; height: 450px; object-fit: cover; display: block; }
         .modal-thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
         .modal-thumb { width: 100%; height: 80px; object-fit: cover; cursor: pointer; opacity: 0.6; transition: opacity 0.25s; }
         .modal-thumb:hover, .modal-thumb.active { opacity: 1; }
         .modal-title { font-size: 42px; font-weight: 300; margin-bottom: 20px; color: #fff; }
-        .modal-desc { font-size: 20px; color: #ccc; line-height: 1.7; margin-bottom: 32px; }
+        .modal-desc { font-size: 18px; color: #ccc; line-height: 1.8; margin-bottom: 32px; }
         .modal-meta { font-size: 14px; color: #888; margin-bottom: 32px; }
         .catalog-card { cursor: pointer; transition: transform 0.25s; }
         .catalog-card:hover { transform: translateY(-4px); }
@@ -386,12 +386,12 @@
 
 <script>
 const products = [
-    { title: "Кухни", desc: "Кухонные гарнитуры, островы, барные стойки", meta: "Индивидуальные проекты", imgs: ["https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80", "https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=800&q=80"] },
-    { title: "Прихожие", desc: "Шкафы-купе, обувницы, вешалки", meta: "Индивидуальные проекты", imgs: ["https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=800&q=80"] },
-    { title: "Гостиные", desc: "ТВ-тумбы, полки, стеллажи", meta: "Индивидуальные проекты", imgs: ["https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80"] },
-    { title: "Спальни", desc: "Кровати, тумбочки, комоды", meta: "Индивидуальные проекты", imgs: ["https://images.unsplash.com/photo-1505693416388-b0346efee539?w=800&q=80"] },
-    { title: "Детские", desc: "Кровати-чердаки, столы, шкафы", meta: "Индивидуальные проекты", imgs: ["https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80"] },
-    { title: "Кабинеты", desc: "Рабочие столы, системы хранения", meta: "Индивидуальные проекты", imgs: ["https://images.unsplash.com/photo-1518457900634-6c6c7a579410?w=800&q=80"] }
+    { title: "Кухни", desc: "Кухонные гарнитуры по индивидуальным размерам. Современные и классические решения. Используем качественные материалы: массив, МДФ, кварц, камень. Фурнитура Blum, Hettich. Полный цикл: замер, проектирование, производство, доставка, сборка. Гарантия 5 лет. Проекты любой сложности.", meta: "Срок: 30-45 дней / Гарантия: 5 лет / Материалы: массив, МДФ, кварц", imgs: ["https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80", "https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=800&q=80"] },
+    { title: "Прихожие", desc: "Прихожие под заказ: шкафы-купе, обувницы, вешалки, комоды. Рациональное использование пространства. Системы хранения любой конфигурации. Зеркала, подсветка, встроенные розетки. Работаем по индивидуальным размерам. Качественная фурнитура.", meta: "Срок: 14-21 дней / Гарантия: 5 лет / Фурнитура: Raumplus", imgs: ["https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=800&q=80"] },
+    { title: "Гостиные", desc: "Гостиные: ТВ-тумбы, полки, стеллажи, комоды, модульные системы. Современный и классический стиль. Изготовление по индивидуальному проекту. Качественные материалы и фурнитура. Доставка и сборка. Гарантия 5 лет.", meta: "Срок: 21-30 дней / Гарантия: 5 лет / Стиль: любой", imgs: ["https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80"] },
+    { title: "Спальни", desc: "Спальни: кровати, прикроватные тумбочки, комоды, шкафы, туалетные столики. Комплексное оснащение спален. Качественные материалы. Индивидуальный подход. Изготовление и сборка. Гарантия 5 лет.", meta: "Срок: 21-30 дней / Гарантия: 5 лет / Комплекс: да", imgs: ["https://images.unsplash.com/photo-1505693416388-b0346efee539?w=800&q=80"] },
+    { title: "Детские", desc: "Детские: кровати-чердаки, столы, шкафы, комоды, полки. Безопасные материалы. Яркие цвета или спокойные тона. Мебель растёт вместе с ребёнком. Индивидуальные проекты. Качественное исполнение.", meta: "Срок: 14-21 дней / Гарантия: 5 лет / Безопасность: да", imgs: ["https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80"] },
+    { title: "Кабинеты", desc: "Кабинеты: рабочие столы, стеллажи, кресла, тумбы, системы хранения. Профессиональное оснащение кабинетов. Эргономика и функциональность. Качественные материалы. Комплексное оснащение.", meta: "Срок: 21-30 дней / Гарантия: 5 лет / Эргономика: да", imgs: ["https://images.unsplash.com/photo-1518457900634-6c6c7a579410?w=800&q=80"] }
 ];
 
 function openModal(i) {

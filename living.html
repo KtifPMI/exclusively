@@ -58,12 +58,12 @@
         .modal-close:hover { background: #fff; color: #000; }
         .modal-content { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
         .modal-gallery { display: grid; grid-template-columns: 1fr; gap: 16px; margin-bottom: 32px; }
-        .modal-main-img { width: 100%; height: 700px; object-fit: cover; display: block; }
+        .modal-main-img { width: 100%; height: 450px; object-fit: cover; display: block; }
         .modal-thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
         .modal-thumb { width: 100%; height: 80px; object-fit: cover; cursor: pointer; opacity: 0.6; transition: opacity 0.25s; }
         .modal-thumb:hover, .modal-thumb.active { opacity: 1; }
         .modal-title { font-size: 42px; font-weight: 300; margin-bottom: 20px; color: #fff; }
-        .modal-desc { font-size: 20px; color: #ccc; line-height: 1.7; margin-bottom: 32px; }
+        .modal-desc { font-size: 18px; color: #ccc; line-height: 1.8; margin-bottom: 32px; }
         .modal-meta { font-size: 14px; color: #888; margin-bottom: 32px; }
         .product-card { cursor: pointer; transition: transform 0.25s; }
         .product-card:hover { transform: translateY(-4px); }
@@ -185,12 +185,12 @@
 
 <script>
 const products = [
-    { title: "ТВ-тумба", desc: "Современная тумба под телевизор", meta: "Материалы: МДФ, эмаль", imgs: ["https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80"] },
-    { title: "Стеллаж", desc: "Напольный стеллаж для книг", meta: "Материалы: Массив", imgs: ["https://images.unsplash.com/photo-1532372320572-cda25653a26d?w=800&q=80"] },
-    { title: "Журнальный столик", desc: "Стильный столик из массива", meta: "Материалы: Массив дуба", imgs: ["https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80"] },
-    { title: "Настенные полки", desc: "Декоративные полки", meta: "Материалы: МДФ", imgs: ["https://images.unsplash.com/photo-1505693314120-0d443867891c?w=800&q=80"] },
-    { title: "Комод", desc: "Вместительный комод с ящиками", meta: "Материалы: Массив", imgs: ["https://images.unsplash.com/photo-1558997519-83ea9252edf8?w=800&q=80"] },
-    { title: "Модульная система", desc: "Комплексная система для гостиной", meta: "Материалы: МДФ, массив", imgs: ["https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80"] }
+    { title: "ТВ-тумба", desc: "ТВ-тумба 180 см под телевизор до 65 дюймов. Выдвижные ящики с системой push-to-open. Ниша для ТВ-приставки с вентиляцией. Скрытые кабель-каналы. Регулируемые полки для техники. LED-подсветка по периметру. Вместимость до 4 игровых консолей. Топ из кварца в чёрном цвете.", meta: "Материалы: МДФ / Покрытие: эмаль / Топ: кварц", imgs: ["https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80"] },
+    { title: "Стеллаж", desc: "Напольный стеллаж 200x120 см с 5 полками. Регулируемые полки по высоте. Открытая конструкция с задней панелью. Ниша для ТВ. Место для растений. Светодиодная подсветка каждой полки. Нагрузка до 30 кг на полку. Возможность комбинировать секции. Крепление к стене.", meta: "Материалы: Массив / Покрытие: масло-воск / Нагрузка: 30 кг/полка", imgs: ["https://images.unsplash.com/photo-1532372320572-cda25653a26d?w=800&q=80"] },
+    { title: "Журнальный столик", desc: "Журнальный столик из массива дуба 90x60 см. Скрытый ящик под столешницей для мелочей. Топ из закалённого стекла. Ножки из стали в цвете латуни. Высота 45 см, удобно для дивана. Возможность изготовления с обивкой из кожи. Встроенная беспроводная зарядка.", meta: "Материалы: Массив дуба / Топ: стекло / Фурнитура: латунь", imgs: ["https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80"] },
+    { title: "Настенные полки", desc: "Комплект из 5 настенных полок разного размера. Скрытое крепление без видимых кронштейнов. Полки из массива или МДФ. Возможность комбинировать длину. LED-подсветка опционально. Максимальная нагрузка 15 кг на полку. Идеально для декора и книг. В комплекте крепёж.", meta: "Материалы: МДФ / Крепление: скрытое / Нагрузка: 15 кг", imgs: ["https://images.unsplash.com/photo-1505693314120-0d443867891c?w=800&q=80"] },
+    { title: "Комод", desc: "Комод 140x50 см с 4 выдвижными ящиками. Ящики с доводчиками и направляющими Blum. Фасады с интегрированными ручками. Внутри перегородки для модульных систем. Топ из камня или массива. Ножки из хромированной стали. Цвет на выбор по RAL. Зеркало можно повесить сверху.", meta: "Материалы: Массив / Фурнитура: Blum / Ящики: доводчики", imgs: ["https://images.unsplash.com/photo-1558997519-83ea9252edf8?w=800&q=80"] },
+    { title: "Модульная система", desc: "Модульная система для гостиной: ТВ-зона,書籍ная зона, зона декора. Можно комбинировать более 20 модулей. Настенное или напольное исполнение. Единый стиль для всей комнаты. Индивидуальная комплектация. Возможность расширения. Профессиональная сборка.", meta: "Материалы: МДФ, массив / Система: модульная / Сборка: включена", imgs: ["https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80"] }
 ];
 
 function openModal(i) {
