@@ -156,6 +156,22 @@
             .hero h1 { font-size: 36px; }
             .hero p { font-size: 16px; }
         }
+
+        .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 2000; overflow-y: auto; }
+        .modal.active { display: block; }
+        .modal-close { position: absolute; top: 20px; right: 20px; width: 40px; height: 40px; background: none; border: 1px solid #fff; color: #fff; font-size: 24px; cursor: pointer; z-index: 10; }
+        .modal-close:hover { background: #fff; color: #000; }
+        .modal-content { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
+        .modal-gallery { display: grid; grid-template-columns: 1fr; gap: 16px; margin-bottom: 32px; }
+        .modal-main-img { width: 100%; height: 500px; object-fit: cover; display: block; }
+        .modal-thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+        .modal-thumb { width: 100%; height: 80px; object-fit: cover; cursor: pointer; opacity: 0.6; transition: opacity 0.25s; }
+        .modal-thumb:hover, .modal-thumb.active { opacity: 1; }
+        .modal-title { font-size: 32px; font-weight: 300; margin-bottom: 16px; color: #fff; }
+        .modal-desc { font-size: 16px; color: #ccc; line-height: 1.7; margin-bottom: 24px; }
+        .modal-meta { font-size: 14px; color: #888; margin-bottom: 32px; }
+        .catalog-card { cursor: pointer; transition: transform 0.25s; }
+        .catalog-card:hover { transform: translateY(-4px); }
     </style>
 </head>
 <body>
@@ -353,5 +369,45 @@
         <div class="footer-bottom">&copy; 2024 &laquo;Эксклюзивно&raquo;. Все права защищены.</div>
     </div>
 </footer>
+
+<div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <div class="modal-content">
+        <div class="modal-gallery">
+            <img class="modal-main-img" id="modalImg" src="" alt="">
+            <div class="modal-thumbs" id="modalThumbs"></div>
+        </div>
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <p class="modal-desc" id="modalDesc"></p>
+        <p class="modal-meta" id="modalMeta"></p>
+        <a href="#contact" class="btn btn-fill" onclick="closeModal()">Обсудить проект</a>
+    </div>
+</div>
+
+<script>
+const products = [
+    { title: "Кухни", desc: "Кухонные гарнитуры, островы, барные стойки", meta: "Индивидуальные проекты", imgs: ["https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80", "https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=800&q=80"] },
+    { title: "Прихожие", desc: "Шкафы-купе, обувницы, вешалки", meta: "Индивидуальные проекты", imgs: ["https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=800&q=80"] },
+    { title: "Гостиные", desc: "ТВ-тумбы, полки, стеллажи", meta: "Индивидуальные проекты", imgs: ["https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80"] },
+    { title: "Спальни", desc: "Кровати, тумбочки, комоды", meta: "Индивидуальные проекты", imgs: ["https://images.unsplash.com/photo-1505693416388-b0346efee539?w=800&q=80"] },
+    { title: "Детские", desc: "Кровати-чердаки, столы, шкафы", meta: "Индивидуальные проекты", imgs: ["https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80"] },
+    { title: "Кабинеты", desc: "Рабочие столы, системы хранения", meta: "Индивидуальные проекты", imgs: ["https://images.unsplash.com/photo-1518457900634-6c6c7a579410?w=800&q=80"] }
+];
+
+function openModal(i) {
+    const p = products[i];
+    document.getElementById('modalTitle').textContent = p.title;
+    document.getElementById('modalDesc').textContent = p.desc;
+    document.getElementById('modalMeta').textContent = p.meta;
+    document.getElementById('modalImg').src = p.imgs[0];
+    document.getElementById('modalThumbs').innerHTML = p.imgs.map((img, idx) => `<img class="modal-thumb${idx===0?' active':''}" src="${img}" onclick="setMainImg('${img}', this)">`).join('');
+    document.getElementById('modal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+function closeModal() { document.getElementById('modal').classList.remove('active'); document.body.style.overflow = ''; }
+function setMainImg(src, el) { document.getElementById('modalImg').src = src; document.querySelectorAll('.modal-thumb').forEach(t => t.classList.remove('active')); el.classList.add('active'); }
+document.querySelectorAll('.catalog-card').forEach((card, i) => { card.addEventListener('click', (e) => { e.preventDefault(); openModal(i)); }); });
+document.getElementById('modal').addEventListener('click', (e) => { if (e.target.id === 'modal') closeModal(); });
+</script>
 </body>
 </html>

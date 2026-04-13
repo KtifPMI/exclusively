@@ -51,6 +51,22 @@
         .footer-bottom { border-top: 1px solid #333; padding-top: 24px; text-align: center; font-size: 13px; color: #666; }
         @media (max-width: 1024px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 768px) { .container { padding: 0 24px; } .header-inner { flex-direction: column; gap: 16px; padding: 20px 0; } nav { flex-wrap: wrap; justify-content: center; gap: 20px; } .products-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 36px; } .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+
+        .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 2000; overflow-y: auto; }
+        .modal.active { display: block; }
+        .modal-close { position: absolute; top: 20px; right: 20px; width: 40px; height: 40px; background: none; border: 1px solid #fff; color: #fff; font-size: 24px; cursor: pointer; z-index: 10; }
+        .modal-close:hover { background: #fff; color: #000; }
+        .modal-content { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
+        .modal-gallery { display: grid; grid-template-columns: 1fr; gap: 16px; margin-bottom: 32px; }
+        .modal-main-img { width: 100%; height: 500px; object-fit: cover; display: block; }
+        .modal-thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+        .modal-thumb { width: 100%; height: 80px; object-fit: cover; cursor: pointer; opacity: 0.6; transition: opacity 0.25s; }
+        .modal-thumb:hover, .modal-thumb.active { opacity: 1; }
+        .modal-title { font-size: 32px; font-weight: 300; margin-bottom: 16px; color: #fff; }
+        .modal-desc { font-size: 16px; color: #ccc; line-height: 1.7; margin-bottom: 24px; }
+        .modal-meta { font-size: 14px; color: #888; margin-bottom: 32px; }
+        .product-card { cursor: pointer; transition: transform 0.25s; }
+        .product-card:hover { transform: translateY(-4px); }
     </style>
 </head>
 <body>
@@ -83,7 +99,7 @@
                     <h3>Рабочий стол</h3>
                     <p>Просторный стол с ящиками</p>
                     
-                    <a href="index.html#contact" class="btn btn-fill">Заказать</a>
+                    
                 </div>
             </div>
             <div class="product-card">
@@ -92,7 +108,7 @@
                     <h3>Стеллаж</h3>
                     <p>Напольный стеллаж для документов</p>
                     
-                    <a href="index.html#contact" class="btn btn-fill">Заказать</a>
+                    
                 </div>
             </div>
             <div class="product-card">
@@ -101,7 +117,7 @@
                     <h3>Кресло</h3>
                     <p>Эргономичное кресло</p>
                     
-                    <a href="index.html#contact" class="btn btn-fill">Заказать</a>
+                    
                 </div>
             </div>
             <div class="product-card">
@@ -110,7 +126,7 @@
                     <h3>Настенные полки</h3>
                     <p>Полки для книг и документов</p>
                     
-                    <a href="index.html#contact" class="btn btn-fill">Заказать</a>
+                    
                 </div>
             </div>
             <div class="product-card">
@@ -119,7 +135,7 @@
                     <h3>Тумба под принтер</h3>
                     <p>Тумба с ящиками</p>
                     
-                    <a href="index.html#contact" class="btn btn-fill">Заказать</a>
+                    
                 </div>
             </div>
             <div class="product-card">
@@ -128,7 +144,7 @@
                     <h3>Кабинет &laquo;под ключ&raquo;</h3>
                     <p>Комплексное решение</p>
                     
-                    <a href="index.html#contact" class="btn btn-fill">Заказать</a>
+                    
                 </div>
             </div>
         </div>
@@ -152,5 +168,45 @@
         <div class="footer-bottom">&copy; 2024 &laquo;Эксклюзивно&raquo;. Все права защищены.</div>
     </div>
 </footer>
+
+<div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <div class="modal-content">
+        <div class="modal-gallery">
+            <img class="modal-main-img" id="modalImg" src="" alt="">
+            <div class="modal-thumbs" id="modalThumbs"></div>
+        </div>
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <p class="modal-desc" id="modalDesc"></p>
+        <p class="modal-meta" id="modalMeta"></p>
+        <a href="index.html#contact" class="btn btn-fill" onclick="closeModal()">Обсудить проект</a>
+    </div>
+</div>
+
+<script>
+const products = [
+    { title: "Рабочий стол", desc: "Просторный стол с ящиками", meta: "Материалы: Массив", imgs: ["https://images.unsplash.com/photo-1518457900634-6c6c7a579410?w=800&q=80"] },
+    { title: "Стеллаж", desc: "Напольный стеллаж для документов", meta: "Материалы: Массив", imgs: ["https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80"] },
+    { title: "Кресло", desc: "Эргономичное кресло", meta: "Материалы: Ткань", imgs: ["https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80"] },
+    { title: "Настенные полки", desc: "Полки для книг и документов", meta: "Материалы: МДФ", imgs: ["https://images.unsplash.com/photo-1505693314120-0d443867891c?w=800&q=80"] },
+    { title: "Тумба под принтер", desc: "Тумба с ящиками", meta: "Материалы: ЛДСП", imgs: ["https://images.unsplash.com/photo-1558997519-83ea9252edf8?w=800&q=80"] },
+    { title: "Кабинет под ключ", desc: "Комплексное решение", meta: "Материалы: Массив, МДФ", imgs: ["https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80"] }
+];
+
+function openModal(i) {
+    const p = products[i];
+    document.getElementById('modalTitle').textContent = p.title;
+    document.getElementById('modalDesc').textContent = p.desc;
+    document.getElementById('modalMeta').textContent = p.meta;
+    document.getElementById('modalImg').src = p.imgs[0];
+    document.getElementById('modalThumbs').innerHTML = p.imgs.map((img, idx) => `<img class="modal-thumb${idx===0?' active':''}" src="${img}" onclick="setMainImg('${img}', this)">`).join('');
+    document.getElementById('modal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+function closeModal() { document.getElementById('modal').classList.remove('active'); document.body.style.overflow = ''; }
+function setMainImg(src, el) { document.getElementById('modalImg').src = src; document.querySelectorAll('.modal-thumb').forEach(t => t.classList.remove('active')); el.classList.add('active'); }
+document.querySelectorAll('.product-card').forEach((card, i) => { card.addEventListener('click', () => openModal(i)); });
+document.getElementById('modal').addEventListener('click', (e) => { if (e.target.id === 'modal') closeModal(); });
+</script>
 </body>
 </html>
