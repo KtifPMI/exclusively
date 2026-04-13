@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эксклюзивно — Мебель на заказ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #f5f1eb;
+            --bg-secondary: #eae5dc;
+            --bg-surface: #ffffff;
+            --text-primary: #1a1a1a;
+            --text-secondary: #5a5a5a;
+            --text-muted: #8a8a8a;
+            --accent: #1a1a1a;
+            --border: #d4d0c8;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Manrope', -apple-system, sans-serif; 
+            background: var(--bg-primary); 
+            color: var(--text-primary); 
+            line-height: 1.6; 
+            -webkit-font-smoothing: antialiased;
+            cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><text y="20" font-size="20">🪑</text></svg>') 16 16, auto;
+        }
+        a { text-decoration: none; color: inherit; cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><text y="20" font-size="20">🪑</text></svg>') 16 16, pointer; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+        header { background: var(--bg-primary); border-bottom: 1px solid var(--border); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 24px 0; }
+        .logo { font-size: 20px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; }
+        nav { display: flex; align-items: center; gap: 40px; }
+        nav a { font-size: 14px; font-weight: 400; color: var(--text-secondary); transition: color 0.25s; }
+        nav a:hover { color: var(--text-primary); }
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; font-size: 14px; font-weight: 500; border-radius: 0; cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><text y="20" font-size="20">🪑</text></svg>') 16 16, pointer; transition: all 0.25s; border: 1px solid var(--accent); background: transparent; color: var(--accent); }
+        .btn:hover { background: var(--accent); color: #fff; }
+        .btn-fill { background: var(--accent); color: #fff; }
+        .btn-fill:hover { background: #333; border-color: #333; }
+        
+        /* Hero */
+        .hero { 
+            min-height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            position: relative;
+            background: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1920&q=80') center/cover no-repeat;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 100%);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            padding: 0 40px;
+        }
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: #fff;
+            letter-spacing: -2px;
+        }
+        .hero p {
+            font-size: 20px;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 40px;
+            line-height: 1.7;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Section */
+        .section { padding: 100px 0; }
+        .section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; }
+        .section-title { font-size: 36px; font-weight: 300; letter-spacing: -0.5px; }
+        .section-subtitle { font-size: 14px; color: var(--text-muted); margin-top: 8px; }
+        
+        /* Features */
+        .features { background: var(--bg-secondary); }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .feature-card { padding: 40px; background: var(--bg-surface); border: 1px solid var(--border); }
+        .feature-card h3 { font-size: 18px; font-weight: 500; margin-bottom: 12px; }
+        .feature-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+        .feature-num { font-size: 12px; color: var(--text-muted); margin-bottom: 20px; display: block; }
+        
+        /* Catalog */
+        .catalog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .catalog-card { display: block; }
+        .catalog-card-img { position: relative; overflow: hidden; margin-bottom: 20px; }
+        .catalog-card-img img { width: 100%; height: 320px; object-fit: cover; display: block; }
+        .catalog-card-img::after { content: ''; position: absolute; inset: 0; border: 1px solid var(--border); pointer-events: none; }
+        .catalog-card h3 { font-size: 20px; font-weight: 400; margin-bottom: 8px; }
+        .catalog-card p { font-size: 14px; color: var(--text-muted); }
+        
+        /* Custom */
+        .custom { background: var(--bg-secondary); }
+        .custom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .custom-img img { width: 100%; height: 500px; object-fit: cover; display: block; }
+        .custom-img { position: relative; }
+        .custom-img::after { content: ''; position: absolute; inset: 0; border: 1px solid var(--border); pointer-events: none; }
+        .custom h2 { font-size: 36px; font-weight: 300; margin-bottom: 24px; letter-spacing: -0.5px; }
+        .custom p { font-size: 16px; color: var(--text-secondary); margin-bottom: 24px; line-height: 1.7; }
+        .custom-list { list-style: none; margin-bottom: 32px; }
+        .custom-list li { padding: 16px 0; border-bottom: 1px solid var(--border); font-size: 15px; display: flex; align-items: center; gap: 12px; }
+        .custom-list li::before { content: '—'; color: var(--text-muted); }
+        
+        /* Contact */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; }
+        .contact-info h3 { font-size: 28px; font-weight: 300; margin-bottom: 32px; }
+        .contact-item { margin-bottom: 24px; }
+        .contact-item label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 4px; }
+        .contact-item a, .contact-item span { font-size: 16px; }
+        .contact-item a:hover { text-decoration: underline; }
+        .contact-form { background: var(--bg-surface); border: 1px solid var(--border); padding: 40px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { font-size: 13px; font-weight: 500; display: block; margin-bottom: 8px; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 14px 16px; font-size: 15px; font-family: inherit; background: var(--bg-primary); border: 1px solid var(--border); color: var(--text-primary); }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--accent); }
+        .form-group textarea { min-height: 120px; resize: vertical; }
+        
+        /* Footer */
+        footer { background: var(--text-primary); color: #fff; padding: 60px 0 30px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 40px; }
+        .footer-brand .logo { margin-bottom: 16px; display: block; color: #fff; }
+        .footer-brand p { font-size: 14px; color: #888; line-height: 1.6; max-width: 260px; }
+        .footer-col h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 20px; color: #888; }
+        .footer-col a { display: block; font-size: 14px; color: #bbb; margin-bottom: 12px; }
+        .footer-col a:hover { color: #fff; }
+        .footer-bottom { border-top: 1px solid #333; padding-top: 24px; text-align: center; font-size: 13px; color: #666; }
+        
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 48px; }
+            .features-grid, .catalog-grid { grid-template-columns: repeat(2, 1fr); }
+            .custom-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+        }
+        @media (max-width: 768px) {
+            .container { padding: 0 24px; }
+            .header-inner { flex-direction: column; gap: 16px; padding: 20px 0; }
+            nav { flex-wrap: wrap; justify-content: center; gap: 20px; }
+            .features-grid, .catalog-grid { grid-template-columns: 1fr; }
+            .section-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .form-row { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="header-inner">
+            <a href="index.html" class="logo">Эксклюзивно</a>
+            <nav>
+                <a href="#catalog">Каталог</a>
+                <a href="#custom">Дизайн</a>
+                <a href="#contact">Контакты</a>
+                <a href="#contact" class="btn btn-fill">Оставить заявку</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Мебель ручной работы</h1>
+        <p>Создаём авторскую мебель по индивидуальным проектам. Каждое изделие — единственное и неповторимое, продуманное до мелочей.</p>
+        <a href="#catalog" class="btn btn-fill">Смотреть каталог</a>
+    </div>
+</section>
+
+<section class="section features" id="features">
+    <div class="container">
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="feature-num">01</span>
+                <h3>По вашим чертежам</h3>
+                <p>Изготовим мебель по эскизу, фотографии или описанию. Учтём все пожелания и размеры.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-num">02</span>
+                <h3>Премиальные материалы</h3>
+                <p>Массив дуба, ореха, бука и другие ценные породы. Фурнитура Blum, Hettich.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-num">03</span>
+                <h3>Качественное производство</h3>
+                <p>Каждый элемент обрабатывается с вниманием к деталям для безупречного результата.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="catalog">
+    <div class="container">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title">Каталог</h2>
+                <p class="section-subtitle">Выберите категорию</p>
+            </div>
+        </div>
+        <div class="catalog-grid">
+            <a href="kitchen.html" class="catalog-card">
+                <div class="catalog-card-img"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Кухни"></div>
+                <h3>Кухни</h3>
+                <p>Кухонные гарнитуры, островы, барные стойки</p>
+            </a>
+            <a href="hallway.html" class="catalog-card">
+                <div class="catalog-card-img"><img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&q=80" alt="Прихожие"></div>
+                <h3>Прихожие</h3>
+                <p>Шкафы-купе, обувницы, вешалки</p>
+            </a>
+            <a href="living.html" class="catalog-card">
+                <div class="catalog-card-img"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&q=80" alt="Гостиные"></div>
+                <h3>Гостиные</h3>
+                <p>ТВ-тумбы, полки, стеллажи</p>
+            </a>
+            <a href="bedroom.html" class="catalog-card">
+                <div class="catalog-card-img"><img src="https://images.unsplash.com/photo-1505693416388-b0346efee539?w=600&q=80" alt="Спальни"></div>
+                <h3>Спальни</h3>
+                <p>Кровати, тумбочки, комоды</p>
+            </a>
+            <a href="kids.html" class="catalog-card">
+                <div class="catalog-card-img"><img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80" alt="Детские"></div>
+                <h3>Детские</h3>
+                <p>Кровати-чердаки, столы, шкафы</p>
+            </a>
+            <a href="office.html" class="catalog-card">
+                <div class="catalog-card-img"><img src="https://images.unsplash.com/photo-1518457900634-6c6c7a579410?w=600&q=80" alt="Кабинеты"></div>
+                <h3>Кабинеты</h3>
+                <p>Рабочие столы, системы хранения</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="section custom" id="custom">
+    <div class="container">
+        <div class="custom-grid">
+            <div class="custom-img">
+                <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800&q=80" alt="Дизайн на заказ">
+            </div>
+            <div class="custom-text">
+                <h2>Дизайн на заказ</h2>
+                <p>Есть идея? Пришлите эскиз, фотографию или просто опишите концепцию — мы создадим проект специально для вас.</p>
+                <ul class="custom-list">
+                    <li>3D-визуализация до начала производства</li>
+                    <li>Доставка и сборка по Москве</li>
+                    <li>Гарантия 5 лет</li>
+                </ul>
+                <a href="#contact" class="btn btn-fill">Обсудить проект</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="contact">
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Свяжитесь с нами</h3>
+                <div class="contact-item">
+                    <label>Телефон</label>
+                    <a href="tel:+79001234567">+7 (900) 123-45-67</a>
+                </div>
+                <div class="contact-item">
+                    <label>Email</label>
+                    <a href="mailto:info@exclusively.ru">info@exclusively.ru</a>
+                </div>
+                <div class="contact-item">
+                    <label>Адрес</label>
+                    <span>г. Москва, ул. Примерная, д. 10</span>
+                </div>
+                <div class="contact-item">
+                    <label>Время работы</label>
+                    <span>Пн-Сб: 10:00 - 19:00</span>
+                </div>
+            </div>
+            <form class="contact-form" action="mailto:info@exclusively.ru" method="post" enctype="text/plain">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Ваше имя</label>
+                        <input type="text" placeholder="Иван Иванов" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Телефон</label>
+                        <input type="tel" placeholder="+7 (900) 123-45-67" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Тип мебели</label>
+                    <select>
+                        <option value="">Выберите тип...</option>
+                        <option>Кухня</option>
+                        <option>Прихожая</option>
+                        <option>Гостиная</option>
+                        <option>Спальня</option>
+                        <option>Детская</option>
+                        <option>Кабинет</option>
+                        <option>Другое</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Сообщение</label>
+                    <textarea placeholder="Опишите ваш проект..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-fill" style="width: 100%;">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">Эксклюзивно</a>
+                <p>Изготавливаем уникальную мебель по индивидуальным проектам с 2015 года.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Каталог</h4>
+                <a href="kitchen.html">Кухни</a>
+                <a href="hallway.html">Прихожие</a>
+                <a href="living.html">Гостиные</a>
+                <a href="bedroom.html">Спальни</a>
+                <a href="kids.html">Детские</a>
+                <a href="office.html">Кабинеты</a>
+            </div>
+            <div class="footer-col">
+                <h4>Услуги</h4>
+                <a href="#custom">Дизайн на заказ</a>
+                <a href="#contact">Доставка</a>
+                <a href="#contact">Сборка</a>
+            </div>
+            <div class="footer-col">
+                <h4>Контакты</h4>
+                <a href="tel:+79001234567">+7 (900) 123-45-67</a>
+                <a href="mailto:info@exclusively.ru">info@exclusively.ru</a>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2024 &laquo;Эксклюзивно&raquo;. Все права защищены.</div>
+    </div>
+</footer>
+</body>
+</html>
