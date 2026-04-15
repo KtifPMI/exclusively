@@ -431,7 +431,7 @@ function openModal(i) {
 }
 function closeModal() { document.getElementById('modal').classList.remove('active'); document.body.style.overflow = ''; }
 function setMainImg(src, el) { document.getElementById('modalImg').src = src; document.querySelectorAll('.modal-thumb').forEach(t => t.classList.remove('active')); el.classList.add('active'); }
-document.querySelectorAll('.catalog-card').forEach((card, i) => { card.addEventListener('click', (e) => { e.preventDefault(); openModal(i); }); });
+document.querySelectorAll('.catalog-card').forEach((card, i) => { card.addEventListener('click', (e) => { window.location.href = card.href; }); });
 document.getElementById('modal').addEventListener('click', (e) => { if (e.target.id === 'modal') closeModal(); });
 function toggleMenu() { document.getElementById('nav').classList.toggle('active'); document.querySelector('.burger').classList.toggle('active'); }
 function closeMenu() { document.getElementById('nav').classList.remove('active'); document.querySelector('.burger').classList.remove('active'); }
