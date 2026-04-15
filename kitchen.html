@@ -19,6 +19,7 @@
         nav { display: flex; align-items: center; gap: 40px; }
         nav a { font-size: 14px; font-weight: 400; color: var(--text-secondary); transition: color 0.25s; }
         nav a:hover { color: var(--text-primary); }
+        .burger { display: none; }
         .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; font-size: 14px; font-weight: 500; border-radius: 0; cursor: pointer; transition: all 0.25s; border: 1px solid var(--accent); background: transparent; color: var(--accent); }
         .btn:hover { background: var(--accent); color: #fff; }
         .btn-fill { background: var(--accent); color: #fff; }
@@ -50,7 +51,7 @@
         .footer-col a:hover { color: #fff; }
         .footer-bottom { border-top: 1px solid #333; padding-top: 24px; text-align: center; font-size: 13px; color: #666; }
         @media (max-width: 1024px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 768px) { .container { padding: 0 24px; } .header-inner { flex-direction: column; gap: 16px; padding: 20px 0; } nav { flex-wrap: wrap; justify-content: center; gap: 20px; } .products-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 36px; } .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+        @media (max-width: 768px) { .container { padding: 0 20px; } .header { height: 60px; } .header-inner { flex-direction: row; justify-content: space-between; padding: 16px 0; } .logo { font-size: 18px; font-weight: 600; } nav { display: none; } .burger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; } .burger span { width: 24px; height: 2px; background: var(--text-primary); } .nav { display: none; position: fixed; top: 60px; left: 0; right: 0; background: var(--bg-primary); flex-direction: column; padding: 20px; gap: 0; border-bottom: 1px solid var(--border); z-index: 999; } .nav.active { display: flex; } .nav a { padding: 12px 0; border-bottom: 1px solid var(--border); width: 100%; text-align: center; } .nav .btn { margin: 16px 0 0; width: 100%; } .products-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 32px; } .hero { padding-bottom: 24px; } .breadcrumb { padding-top: 80px; } .footer-grid { grid-template-columns: 1fr; gap: 24px; } footer { padding: 40px 0 20px; } .product-card-img img { height: 220px; } .product-card-content { padding: 16px; } .product-card h3 { font-size: 16px; } .cta { padding: 48px 0; } .cta h2 { font-size: 24px; } }
 
         .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 2000; overflow-y: auto; }
         .modal.active { display: block; }
@@ -78,11 +79,14 @@
     <div class="container">
         <div class="header-inner">
             <a href="index.html" class="logo">Эксклюзивно</a>
-            <nav>
-                <a href="index.html#catalog">Каталог</a>
-                <a href="index.html#custom">Дизайн</a>
-                <a href="index.html#contact">Контакты</a>
-                <a href="index.html#contact" class="btn btn-fill">Оставить заявку</a>
+            <div class="burger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+            <nav class="nav" id="nav">
+                <a href="index.html#catalog" onclick="closeMenu()">Каталог</a>
+                <a href="index.html#custom" onclick="closeMenu()">Дизайн</a>
+                <a href="index.html#contact" onclick="closeMenu()">Контакты</a>
+                <a href="index.html#contact" class="btn btn-fill" onclick="closeMenu()">Оставить заявку</a>
             </nav>
         </div>
     </div>
@@ -262,6 +266,9 @@ document.querySelectorAll('.product-card').forEach((card, i) => {
 document.getElementById('modal').addEventListener('click', (e) => {
     if (e.target.id === 'modal') closeModal();
 });
+function toggleMenu() { document.getElementById('nav').classList.toggle('active'); document.querySelector('.burger').classList.toggle('active'); }
+function closeMenu() { document.getElementById('nav').classList.remove('active'); document.querySelector('.burger').classList.remove('active'); }
+document.querySelectorAll('img').forEach(img => { img.loading = 'lazy'; });
 </script>
 </body>
 </html>
