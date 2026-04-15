@@ -8,6 +8,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+
+            /* Стили для белой кнопки */
+        .btn-light {
+            background-color: #ffffff;
+            color: #1a1a1a; /* Черный текст */
+            border-color: #ffffff;
+        }
+
+        /* Эффект при наведении: становится черной с белым текстом */
+        .btn-light:hover {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            border-color: #1a1a1a;
+        }
         :root {
             --bg-primary: #f5f1eb;
             --bg-secondary: #eae5dc;
@@ -220,7 +234,7 @@
     <div class="hero-content">
         <h1>От идеи до реализации: мебель вашей мечты</h1>
         <p>Создаём авторскую мебель по индивидуальным проектам. Каждое изделие — единственное и неповторимое, продуманное до мелочей.</p>
-        <a href="#catalog" class="btn btn-fill">Смотреть каталог</a>
+        <a href="#catalog" class="btn btn-fill btn-light">Смотреть каталог</a>
     </div>
 </section>
 
