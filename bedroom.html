@@ -217,7 +217,7 @@ function openModal(i) {
 }
 function closeModal() { document.getElementById('modal').classList.remove('active'); document.body.style.overflow = ''; }
 function setMainImg(src, el) { document.getElementById('modalImg').src = src; document.querySelectorAll('.modal-thumb').forEach(t => t.classList.remove('active')); el.classList.add('active'); }
-document.querySelectorAll('.product-card').forEach((card, i) => { card.addEventListener('click', () => openModal(i)); });
+document.querySelectorAll('.product-card').forEach((card, i) => { card.addEventListener('click', (e) => { e.preventDefault(); openModal(i); }); });
 document.getElementById('modal').addEventListener('click', (e) => { if (e.target.id === 'modal') closeModal(); });
 </script>
 </body>
