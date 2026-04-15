@@ -163,7 +163,7 @@
         .modal-close:hover { background: #fff; color: #000; }
 .modal-content { max-width: 1600px; margin: 40px auto; padding: 0 50px; }
         .modal-gallery { display: grid; grid-template-columns: 1.3fr 1fr; gap: 60px; align-items: center; }
-        .modal-main-img { width: 100%; height: 750px; object-fit: cover; display: block; }
+        .modal-main-img { width: 100%; height: 80vh; max-height: 750px; object-fit: cover; display: block; }
         .modal-thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 16px; }
         .modal-thumb { width: 100%; height: 90px; object-fit: cover; cursor: pointer; opacity: 0.6; transition: opacity 0.25s; }
         .modal-thumb:hover, .modal-thumb.active { opacity: 1; }
@@ -171,11 +171,8 @@
         .modal-desc { font-size: 22px; color: #ccc; line-height: 1.7; margin-bottom: 28px; }
         .modal-meta { font-size: 16px; color: #888; margin-bottom: 28px; }
         .modal-text { display: flex; flex-direction: column; justify-content: center; }
-        @media (max-width: 1400px) { .modal-content { max-width: 800px; } .modal-gallery { gap: 30px; } .modal-main-img { height: 450px; } .modal-title { font-size: 32px; } .modal-desc { font-size: 16px; } .modal-meta { font-size: 14px; } }
-        @media (max-width: 1200px) { .modal-content { max-width: 700px; } .modal-gallery { gap: 24px; } .modal-main-img { height: 400px; } .modal-title { font-size: 28px; } .modal-desc { font-size: 15px; } }
-        @media (max-width: 1024px) { .modal-content { max-width: 600px; } .modal-gallery { gap: 20px; } .modal-main-img { height: 350px; } .modal-title { font-size: 24px; } }
-        @media (max-width: 900px) { .modal-content { max-width: 500px; padding: 0 20px; } .modal-gallery { gap: 16px; } .modal-main-img { height: 300px; } .modal-title { font-size: 22px; } .modal-desc { font-size: 14px; } .modal-meta { font-size: 13px; } .modal-thumbs { gap: 6px; } .modal-thumb { height: 50px; } }
-        @media (max-width: 768px) { .modal-gallery { grid-template-columns: 1fr; } .modal-main-img { height: 350px; } }
+        @media (max-width: 90vw) { .modal-content { max-width: 80vw; margin: 3vw auto; padding: 0 3vw; } .modal-gallery { gap: 3vw; } .modal-main-img { height: 60vh; } .modal-title { font-size: 3vw; } .modal-desc { font-size: 1.5vw; } .modal-meta { font-size: 1.2vw; } .modal-thumbs { gap: 0.8vw; } .modal-thumb { height: 8vh; } }
+        @media (max-width: 768px) { .modal-gallery { grid-template-columns: 1fr; } .modal-main-img { height: 50vh; } }
         .catalog-card { cursor: pointer; transition: transform 0.25s; }
         .catalog-card:hover { transform: translateY(-4px); }
     </style>
