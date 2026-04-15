@@ -37,7 +37,7 @@
         .burger { display: none; }
         .header { height: 70px; }
         .header-line { display: none; }
-        @media (max-width: 768px) { .burger { display: block; } .logo::after { content: ''; display: block; height: 2px; background: #fff; margin-top: 8px; } }
+        @media (max-width: 768px) { .burger { display: block; } .logo::after { content: ''; display: block; width: 2px; height: 20px; background: #fff; position: absolute; right: -12px; top: 50%; transform: translateY(-50%); } .logo { position: relative; } }
         .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; font-size: 14px; font-weight: 500; border-radius: 0; transition: all 0.25s; border: 1px solid var(--accent); background: transparent; color: var(--accent); }
         .btn:hover { background: var(--accent); color: #fff; }
         .btn-fill { background: var(--accent); color: #fff; }
