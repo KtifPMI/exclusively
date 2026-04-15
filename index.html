@@ -34,6 +34,7 @@
         nav { display: flex; align-items: center; gap: 40px; }
         nav a { font-size: 14px; font-weight: 400; color: var(--text-secondary); transition: color 0.25s; }
         nav a:hover { color: var(--text-primary); }
+        .burger { display: none; }
         .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; font-size: 14px; font-weight: 500; border-radius: 0; transition: all 0.25s; border: 1px solid var(--accent); background: transparent; color: var(--accent); }
         .btn:hover { background: var(--accent); color: #fff; }
         .btn-fill { background: var(--accent); color: #fff; }
@@ -147,12 +148,22 @@
         }
         @media (max-width: 768px) {
             .container { padding: 0 24px; }
-            .header-inner { flex-direction: column; gap: 16px; padding: 20px 0; }
-            nav { flex-wrap: wrap; justify-content: center; gap: 20px; }
+            .header-inner { flex-direction: row; justify-content: space-between; padding: 16px 0; }
+            .logo { font-size: 18px; }
+            nav { display: none; }
+            .burger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+            .burger span { width: 24px; height: 2px; background: #fff; }
+            .nav { display: none; position: fixed; top: 60px; left: 0; right: 0; background: var(--bg-primary); flex-direction: column; padding: 20px; gap: 0; border-bottom: 1px solid var(--border); z-index: 999; }
+            .nav.active { display: flex; }
+            .nav a { padding: 12px 0; border-bottom: 1px solid var(--border); width: 100%; text-align: center; }
+            .nav .btn { margin: 16px 0 0; width: 100%; }
             .features-grid, .catalog-grid { grid-template-columns: 1fr; }
             .section-header { flex-direction: column; align-items: flex-start; gap: 12px; }
             .form-row { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 16px; }
+        }
             .hero h1 { font-size: 36px; }
             .hero p { font-size: 16px; }
         }
@@ -182,11 +193,14 @@
     <div class="container">
         <div class="header-inner">
             <a href="index.html" class="logo">Эксклюзивно</a>
-            <nav>
-                <a href="#catalog">Каталог</a>
-                <a href="#custom">Дизайн</a>
-                <a href="#contact">Контакты</a>
-                <a href="#contact" class="btn btn-fill">Оставить заявку</a>
+            <div class="burger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+            <nav class="nav" id="nav">
+                <a href="#catalog" onclick="closeMenu()">Каталог</a>
+                <a href="#custom" onclick="closeMenu()">Дизайн</a>
+                <a href="#contact" onclick="closeMenu()">Контакты</a>
+                <a href="#contact" class="btn btn-fill" onclick="closeMenu()">Оставить заявку</a>
             </nav>
         </div>
     </div>
@@ -415,6 +429,8 @@ function closeModal() { document.getElementById('modal').classList.remove('activ
 function setMainImg(src, el) { document.getElementById('modalImg').src = src; document.querySelectorAll('.modal-thumb').forEach(t => t.classList.remove('active')); el.classList.add('active'); }
 document.querySelectorAll('.catalog-card').forEach((card, i) => { card.addEventListener('click', (e) => { e.preventDefault(); openModal(i)); }); });
 document.getElementById('modal').addEventListener('click', (e) => { if (e.target.id === 'modal') closeModal(); });
+function toggleMenu() { document.getElementById('nav').classList.toggle('active'); document.querySelector('.burger').classList.toggle('active'); }
+function closeMenu() { document.getElementById('nav').classList.remove('active'); document.querySelector('.burger').classList.remove('active'); }
 </script>
 </body>
 </html>
