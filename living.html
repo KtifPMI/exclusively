@@ -51,7 +51,7 @@
         .footer-col a:hover { color: #fff; }
         .footer-bottom { border-top: 1px solid #333; padding-top: 24px; text-align: center; font-size: 13px; color: #666; }
         @media (max-width: 1024px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 768px) { .container { padding: 0 20px; } .header { height: 60px; } .header-inner { flex-direction: row; justify-content: space-between; padding: 16px 0; } .logo { font-size: 18px; font-weight: 600; } nav { display: none; } .burger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; } .burger span { width: 24px; height: 2px; background: var(--text-primary); } .nav { display: none; position: fixed; top: 60px; left: 0; right: 0; background: var(--bg-primary); flex-direction: column; padding: 20px; gap: 0; border-bottom: 1px solid var(--border); z-index: 999; } .nav.active { display: flex; } .nav a { padding: 12px 0; border-bottom: 1px solid var(--border); width: 100%; text-align: center; } .nav .btn { margin: 16px 0 0; width: 100%; } .products-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 32px; } .hero { padding-bottom: 24px; } .breadcrumb { padding-top: 80px; } .footer-grid { grid-template-columns: 1fr; gap: 24px; } footer { padding: 40px 0 20px; } .product-card-img img { height: 220px; } .product-card-content { padding: 16px; } .product-card h3 { font-size: 16px; } .cta { padding: 48px 0; } .cta h2 { font-size: 24px; } }
+        @media (max-width: 768px) { .container { padding: 0 20px; } .header { height: 60px; } .header-inner { flex-direction: row; justify-content: space-between; padding: 16px 0; } .logo { font-size: 18px; font-weight: 600; } nav { display: none; } .burger { width: 24px; height: 3px; background: var(--text-primary); cursor: pointer; position: relative; } .burger::before { content: ''; position: absolute; left: 0; right: 0; height: 3px; background: var(--text-primary); top: -8px; } .burger::after { content: ''; position: absolute; left: 0; right: 0; height: 3px; background: var(--text-primary); bottom: -8px; } .nav { display: none; position: fixed; top: 60px; left: 0; right: 0; background: var(--bg-primary); flex-direction: column; padding: 20px; gap: 0; border-bottom: 1px solid var(--border); z-index: 999; transform: translateY(-20px); opacity: 0; transition: transform 0.3s ease, opacity 0.3s ease; } .nav.active { display: flex; transform: translateY(0); opacity: 1; } .nav a { padding: 12px 0; border-bottom: 1px solid var(--border); width: 100%; text-align: center; } .nav .btn { margin: 16px 0 0; width: 100%; } .products-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 32px; } .hero { padding-bottom: 24px; } .breadcrumb { padding-top: 80px; } .footer-grid { grid-template-columns: 1fr; gap: 24px; } footer { padding: 40px 0 20px; } .product-card-img img { height: 220px; } .product-card-content { padding: 16px; } .product-card h3 { font-size: 16px; } .cta { padding: 48px 0; } .cta h2 { font-size: 24px; } }
 
         .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 2000; overflow-y: auto; }
         .modal.active { display: block; }
@@ -68,7 +68,7 @@
         .modal-meta { font-size: 16px; color: #888; margin-bottom: 28px; }
         .modal-text { display: flex; flex-direction: column; justify-content: center; }
         @media (max-width: 90vw) { .modal-content { max-width: 80vw; margin: 3vw auto; padding: 0 3vw; } .modal-gallery { gap: 3vw; } .modal-main-img { height: 60vh; } .modal-title { font-size: 3vw; } .modal-desc { font-size: 1.5vw; } .modal-meta { font-size: 1.2vw; } .modal-thumbs { gap: 0.8vw; } .modal-thumb { height: 8vh; } }
-        @media (max-width: 768px) { .modal-gallery { grid-template-columns: 1fr; } .modal-main-img { height: 50vh; } }
+        @media (max-width: 768px) { .modal-gallery { grid-template-columns: 1fr; } .modal-main-img { height: 50vh; } .modal-close { top: 10px; right: 10px; width: 36px; height: 36px; font-size: 20px; } .modal-content { padding: 0 20px; margin: 20px auto; } .modal-title { font-size: 28px; } .modal-desc { font-size: 16px; } .modal-meta { font-size: 14px; } }
         .product-card { cursor: pointer; transition: transform 0.25s; }
         .product-card:hover { transform: translateY(-4px); }
     </style>
@@ -78,9 +78,7 @@
     <div class="container">
         <div class="header-inner">
             <a href="index.html" class="logo">Эксклюзивно</a>
-            <div class="burger" onclick="toggleNav()">
-                <span></span><span></span><span></span>
-            </div>
+            <div class="burger" onclick="toggleNav()"></div>
             <nav class="nav" id="nav">
                 <a href="index.html#catalog">Каталог</a>
                 <a href="index.html#custom">Дизайн</a>

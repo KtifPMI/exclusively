@@ -151,10 +151,11 @@
             .header-inner { flex-direction: row; justify-content: space-between; padding: 16px 0; }
             .logo { font-size: 18px; font-weight: 600; }
             nav { display: none; }
-            .burger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
-            .burger span { width: 24px; height: 2px; background: #fff; }
-            .nav { display: none; position: fixed; top: 60px; left: 0; right: 0; background: var(--bg-primary); flex-direction: column; padding: 20px; gap: 0; border-bottom: 1px solid var(--border); z-index: 999; }
-            .nav.active { display: flex; }
+            .burger { width: 24px; height: 3px; background: #fff; cursor: pointer; position: relative; }
+            .burger::before { content: ''; position: absolute; left: 0; right: 0; height: 3px; background: #fff; top: -8px; }
+            .burger::after { content: ''; position: absolute; left: 0; right: 0; height: 3px; background: #fff; bottom: -8px; }
+            .nav { display: none; position: fixed; top: 60px; left: 0; right: 0; background: var(--bg-primary); flex-direction: column; padding: 20px; gap: 0; border-bottom: 1px solid var(--border); z-index: 999; transform: translateY(-20px); opacity: 0; transition: transform 0.3s ease, opacity 0.3s ease; }
+            .nav.active { display: flex; transform: translateY(0); opacity: 1; }
             .nav a { padding: 12px 0; border-bottom: 1px solid var(--border); width: 100%; text-align: center; }
             .nav .btn { margin: 16px 0 0; width: 100%; }
             .features-grid, .catalog-grid { grid-template-columns: 1fr; }
@@ -180,7 +181,7 @@
         .modal-meta { font-size: 16px; color: #888; margin-bottom: 28px; }
         .modal-text { display: flex; flex-direction: column; justify-content: center; }
         @media (max-width: 90vw) { .modal-content { max-width: 80vw; margin: 3vw auto; padding: 0 3vw; } .modal-gallery { gap: 3vw; } .modal-main-img { height: 60vh; } .modal-title { font-size: 3vw; } .modal-desc { font-size: 1.5vw; } .modal-meta { font-size: 1.2vw; } .modal-thumbs { gap: 0.8vw; } .modal-thumb { height: 8vh; } }
-        @media (max-width: 768px) { .modal-gallery { grid-template-columns: 1fr; } .modal-main-img { height: 50vh; } }
+        @media (max-width: 768px) { .modal-gallery { grid-template-columns: 1fr; } .modal-main-img { height: 50vh; } .modal-close { top: 10px; right: 10px; width: 36px; height: 36px; font-size: 20px; } .modal-content { padding: 0 20px; margin: 20px auto; } .modal-title { font-size: 28px; } .modal-desc { font-size: 16px; } .modal-meta { font-size: 14px; } }
         .catalog-card { cursor: pointer; transition: transform 0.25s; }
         .catalog-card:hover { transform: translateY(-4px); }
     </style>
@@ -190,9 +191,7 @@
     <div class="container">
         <div class="header-inner">
             <a href="index.html" class="logo">Эксклюзивно</a>
-            <div class="burger" onclick="toggleMenu()">
-                <span></span><span></span><span></span>
-            </div>
+            <div class="burger" onclick="toggleMenu()"></div>
             <nav class="nav" id="nav">
                 <a href="#catalog" onclick="closeMenu()">Каталог</a>
                 <a href="#custom" onclick="closeMenu()">Дизайн</a>
