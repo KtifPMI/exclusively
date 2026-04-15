@@ -37,7 +37,7 @@
         .burger { display: none; }
         .header { height: 70px; }
         .header-line { display: none; }
-        @media (max-width: 768px) { .burger { display: block; } .header-line { display: block; height: 3px; background: #fff; width: 100%; position: absolute; bottom: 0; left: 0; } }
+        @media (max-width: 768px) { .burger { display: block; } .logo::after { content: ''; display: block; height: 2px; background: #fff; margin-top: 8px; } }
         .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; font-size: 14px; font-weight: 500; border-radius: 0; transition: all 0.25s; border: 1px solid var(--accent); background: transparent; color: var(--accent); }
         .btn:hover { background: var(--accent); color: #fff; }
         .btn-fill { background: var(--accent); color: #fff; }
@@ -194,7 +194,7 @@
     <div class="container">
         <div class="header-inner">
             <a href="index.html" class="logo">Эксклюзивно</a>
-            <div class="header-line"></div>
+            
             <nav class="nav" id="nav">
                 <a href="#catalog" onclick="closeMenu()">Каталог</a>
                 <a href="#custom" onclick="closeMenu()">Дизайн</a>
