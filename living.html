@@ -75,11 +75,20 @@
          .product-card:hover { transform: translateY(-4px); }
         
         /* Max Widget */
-        .max-widget { position: fixed; bottom: 24px; right: 24px; z-index: 3000; }
-        .max-btn { width: 56px; height: 56px; border-radius: 50%; background: #2AABEE; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(42,171,238,0.35); transition: transform 0.2s, box-shadow 0.2s; }
-        .max-btn:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(42,171,238,0.5); }
-        .max-btn svg { width: 28px; height: 28px; fill: #fff; }
-        @media (max-width: 768px) { .max-widget { bottom: 16px; right: 16px; } .max-btn { width: 48px; height: 48px; } .max-btn svg { width: 24px; height: 24px; } }
+        .max-widget { position: fixed; bottom: 24px; right: 24px; z-index: 3000; display: flex; flex-direction: column; align-items: flex-end; }
+        .widget-toggle { width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #2AABEE, #229ED9); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(42, 171, 238, 0.4); transition: transform 0.3s; }
+        .widget-toggle:hover { transform: scale(1.08); }
+        .widget-toggle img { width: 28px; height: 28px; filter: brightness(0) invert(1); }
+        .widget-buttons { display: flex; flex-direction: column; gap: 12px; margin-bottom: 12px; opacity: 0; transform: translateY(20px); transition: opacity 0.3s, transform 0.3s; pointer-events: none; }
+        .max-widget.expanded .widget-buttons { opacity: 1; transform: translateY(0); pointer-events: auto; }
+        .widget-btn { width: 56px; height: 56px; border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,0.2); transition: transform 0.2s; text-decoration: none; position: relative; }
+        .widget-btn:hover { transform: scale(1.08); }
+        .widget-btn img { width: 28px; height: 28px; object-fit: contain; }
+        .phone-btn img { filter: brightness(0) invert(1); }
+        .widget-tooltip { position: absolute; right: 70px; top: 50%; transform: translateY(-50%); background: #333; color: #fff; padding: 8px 16px; border-radius: 6px; font-size: 14px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.2s; }
+        .widget-btn:hover .widget-tooltip { opacity: 1; }
+        .max-widget.expanded .widget-toggle img { filter: none; }
+        @media (max-width: 768px) { .max-widget { bottom: 16px; right: 16px; } .widget-toggle { width: 52px; height: 52px; } .widget-toggle img { width: 24px; height: 24px; } .widget-btn { width: 48px; height: 48px; } .widget-btn img { width: 24px; height: 24px; } .widget-tooltip { display: none; } }
     </style>
 </head>
 <body>
@@ -229,10 +238,15 @@ document.getElementById('modal').addEventListener('click', (e) => { if (e.target
 </script>
 
 <div class="max-widget">
+    <a href="https://max.ru/u/f9LHodD0cOJ4oot9tZUu5HWhNHvaCoajoGJ3lotpN-kotzz1863BuPH5dRY" target="_blank" class="max-btn phone-btn" aria-label="Связаться в Max">
+        <i class="fas fa-phone" style="font-size: 24px; color: #fff;"></i>
+        <span class="tooltip">Позвонить</span>
+    </a>
     <a href="https://max.ru/u/f9LHodD0cOJ4oot9tZUu5HWhNHvaCoajoGJ3lotpN-kotzz1863BuPH5dRY" target="_blank" class="max-btn" aria-label="Связаться в Max">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm4.5 16.5c-.2.1-.7.3-1.2.3-1.3.1-2.4-.8-2.9-1.9l-.6-1.3-1.3.4c-.2.1-.4.1-.6.1-.8 0-1.3-.3-1.3-.3l-2.3-1.1 2.3-1.1s.6-.3 1.4-.7c.8-.4 1.7-.8 2.6-1.3l-4.3-2.1 5.9-2.1 4.3 2.1s-3.3 1.6-5.9 2.8c-.8.4-1.6.8-2.3 1.1l4.3 2.1-2.1 4.2z"/>
         </svg>
+        <span class="tooltip">Max</span>
     </a>
 </div>
 
