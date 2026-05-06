@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Правила обработки cookie — Эксклюзивно</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-primary: #f5f1eb; --bg-secondary: #eae5dc; --bg-surface: #ffffff; --text-primary: #1a1a1a; --text-secondary: #5a5a5a; --text-muted: #8a8a8a; --accent: #1a1a1a; --border: #d4d0c8; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Manrope', -apple-system, sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+        a { text-decoration: none; color: inherit; }
+        header { background: var(--bg-primary); border-bottom: 1px solid var(--border); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 24px 0; }
+        .logo { font-size: 20px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; }
+        nav { display: flex; align-items: center; gap: 40px; }
+        nav a { font-size: 14px; font-weight: 400; color: var(--text-secondary); transition: color 0.25s; }
+        nav a:hover { color: var(--text-primary); }
+        .burger { display: none; }
+        .header { height: 70px; }
+        @media (max-width: 768px) { .burger { display: block; } }
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; font-size: 14px; font-weight: 500; border-radius: 0; cursor: pointer; transition: all 0.25s; border: 1px solid var(--accent); background: transparent; color: var(--accent); }
+        .btn:hover { background: var(--accent); color: #fff; }
+        .btn-fill { background: var(--accent); color: #fff; }
+        .btn-fill:hover { background: #333; border-color: #333; }
+        .breadcrumb { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--text-muted); margin-bottom: 16px; padding-top: 100px; }
+        .breadcrumb a { color: var(--text-secondary); }
+        .content { padding: 60px 0; }
+        .content h1 { font-size: 36px; font-weight: 300; margin-bottom: 24px; letter-spacing: -0.5px; }
+        .content h2 { font-size: 24px; font-weight: 500; margin: 32px 0 16px; }
+        .content p { font-size: 16px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.7; }
+        .content ul { margin: 16px 0 16px 20px; }
+        .content li { font-size: 16px; color: var(--text-secondary); margin-bottom: 8px; line-height: 1.7; }
+        .content a { color: var(--accent); text-decoration: underline; }
+        .content table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 16px; color: var(--text-secondary); }
+        .content th, .content td { border: 1px solid var(--border); padding: 12px; text-align: left; }
+        .content th { background: var(--bg-secondary); font-weight: 500; }
+        footer { background: var(--text-primary); color: #fff; padding: 60px 0 30px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 40px; }
+        .footer-brand .logo { margin-bottom: 16px; display: block; color: #fff; }
+        .footer-brand p { font-size: 14px; color: #888; line-height: 1.6; max-width: 260px; }
+        .footer-links h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; color: #888; }
+        .footer-links a { display: block; font-size: 14px; color: #ccc; padding: 4px 0; transition: color 0.25s; }
+        .footer-links a:hover { color: #fff; }
+        .footer-bottom { border-top: 1px solid #333; padding-top: 20px; font-size: 12px; color: #666; display: flex; justify-content: space-between; }
+        @media (max-width: 1024px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; } }
+        @media (max-width: 768px) { .header-inner { flex-direction: row; justify-content: space-between; padding: 16px 0; } .logo { font-size: 18px; font-weight: 600; } nav { display: none; } .burger { display: block; width: 24px; height: 3px; background: #000; cursor: pointer; position: relative; } .burger::before { content: ''; position: absolute; left: 0; right: 0; height: 3px; background: #000; top: -8px; } .burger::after { content: ''; position: absolute; left: 0; right: 0; height: 3px; background: #000; bottom: -8px; } .nav { display: none; position: fixed; top: 60px; left: 0; right: 0; background: var(--bg-primary); flex-direction: column; padding: 20px; gap: 0; border-bottom: 1px solid var(--border); z-index: 999; transform: translateY(-20px); opacity: 0; transition: transform 0.3s ease, opacity 0.3s ease; } .nav.active { display: flex; transform: translateY(0); opacity: 1; } .nav a { padding: 12px 0; border-bottom: 1px solid var(--border); width: 100%; text-align: center; } .nav .btn { margin: 16px 0 0; width: 100%; } .footer-grid { grid-template-columns: 1fr; gap: 32px; } .content h1 { font-size: 28px; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">Эксклюзивно</a>
+                <nav>
+                    <a href="index.html#catalog">Каталог</a>
+                    <a href="index.html#custom">Дизайн на заказ</a>
+                    <a href="index.html#contact">Контакты</a>
+                    <a href="consent.html">Согласие на обработку ПДн</a>
+                    <a href="cookie.html">Правила обработки cookie</a>
+                    <a href="index.html#contact" class="btn">Обсудить проект</a>
+                </nav>
+                <div class="burger" onclick="toggleNav()"></div>
+            </div>
+        </div>
+    </header>
+    <div class="header"></div>
+    <section class="content">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Главная</a>
+                <span>/</span>
+                <span>Правила обработки cookie</span>
+            </div>
+            <h1>Правила обработки cookie</h1>
+            <p>Документ дополняет Политику конфиденциальности (<a href="consent.html">https://ktifpmi.github.io/exclusively/consent.html</a>) и объясняет, какие cookie-файлы использует vidkupe.ru.</p>
+            <h2>1. Что такое cookie</h2>
+            <p>Cookie — небольшие файлы, которые браузер сохраняет на устройстве для распознавания сессии и улучшения работы сайта.</p>
+            <h2>2. Какие cookie мы используем</h2>
+            <table>
+                <tr><th>Тип</th><th>Пример</th><th>Срок хранения</th><th>Цель</th></tr>
+                <tr><td>Обязательные</td><td>PHPSESSID</td><td>сеанс</td><td>Корректная работа форм и навигации</td></tr>
+                <tr><td>Аналитические</td><td>_ym_uid, _ym_d, yandexuid</td><td>до 24 мес.</td><td>Статистика посещаемости через «Яндекс Метрику»</td></tr>
+            </table>
+            <h2>3. Кто получает cookie-данные</h2>
+            <ul>
+                <li>ООО «Регистратор доменных имён РЕГ.РУ» — хранение файлов в ЦОД: г. Москва, площадь Академика Курчатова, д. 1, здание 301, 5 этаж, помещение 501а;</li>
+                <li>АО «Яндекс» — «Яндекс Метрика» (обезличенная аналитика).</li>
+            </ul>
+            <p>Трансграничная передача не осуществляется.</p>
+            <h2>4. Согласие на cookie</h2>
+            <p>При первом визите появляется баннер с кнопкой «Принять».</p>
+            <p>Нажимая «Принять», вы соглашаетесь на использование всех cookie сроком до 24 месяцев или до их удаления в браузере.</p>
+            <p>Своё решение можно изменить в любое время, очистив или заблокировав cookie в настройках браузера.</p>
+            <p>Согласие действует до 24 месяцев или до их удаления.</p>
+            <h2>5. Как отключить cookie</h2>
+            <p>Ссылки на инструкции:</p>
+            <ul>
+                <li>Chrome: <a href="https://support.google.com/chrome/answer/95647" target="_blank">https://support.google.com/chrome/answer/95647</a></li>
+                <li>Firefox: <a href="https://support.mozilla.org/ru/kb/uluchshennaya-zashchita-ot-otslezhivaniya-firefox-dlya-kompyutera" target="_blank">https://support.mozilla.org/ru/kb/uluchshennaya-zashchita-ot-otslezhivaniya-firefox-dlya-kompyutera</a></li>
+                <li>Safari: <a href="https://support.apple.com/ru-ru/guide/safari/sfri11471/mac" target="_blank">https://support.apple.com/ru-ru/guide/safari/sfri11471/mac</a></li>
+                <li>Edge: <a href="https://support.microsoft.com/help/17442" target="_blank">https://support.microsoft.com/help/17442</a></li>
+                <li>Яндекс Браузер: <a href="https://yandex.ru/support/browser/ru/personal-data-protection/cookies.html" target="_blank">https://yandex.ru/support/browser/ru/personal-data-protection/cookies.html</a></li>
+            </ul>
+            <h2>6. Срок хранения cookie</h2>
+            <p>Аналитические cookie — до 24 мес.; обязательные — до конца сессии. Связанные данные удаляются из резервных копий через 5 лет.</p>
+            <h2>7. Контакты</h2>
+            <p>Вопросы по cookie: ИП Слепцова С. А., nov.vid@mail.ru, +7 (918) 253-22-32.</p>
+            <h2>8. Заключительные положения</h2>
+            <ul>
+                <li>Актуальная редакция политики конфиденциальности: <a href="https://vidkupe.ru/policy" target="_blank">https://vidkupe.ru/policy</a></li>
+                <li>Согласие на обработку ПДн: <a href="https://vidkupe.ru/consent" target="_blank">https://vidkupe.ru/consent</a></li>
+                <li>Политика обработки файлов Cookie: <a href="https://vidkupe.ru/cookie" target="_blank">https://vidkupe.ru/cookie</a></li>
+            </ul>
+            <h2>9. Изменения Политики</h2>
+            <p>Новая редакция публикуется по адресу <a href="https://vidkupe.ru/cookie" target="_blank">https://vidkupe.ru/cookie</a>.</p>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">Эксклюзивно</a>
+                    <p>Мебель на заказ в Краснодаре. Индивидуальный дизайн, премиальные материалы, безупречное качество.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Навигация</h4>
+                    <a href="index.html#catalog">Каталог</a>
+                    <a href="index.html#custom">Дизайн на заказ</a>
+                    <a href="index.html#contact">Контакты</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Услуги</h4>
+                    <a href="living.html">Гостиные</a>
+                    <a href="bedroom.html">Спальни</a>
+                    <a href="kids.html">Детские</a>
+                    <a href="office.html">Коммерческая мебель</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Контакты</h4>
+                    <a href="tel:+79181890174">+7 (918) 189-01-74</a>
+                    <a href="mailto:ruslan.sleptsov.ruslan1@gmail.com">ruslan.sleptsov.ruslan1@gmail.com</a>
+                    <a href="https://max.ru/u/f9LHodD0cOJ4oot9tZUu5HWhNHvaCoajoGJ3lotpN-kotzz1863BuPH5dRY" target="_blank">Max</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2005-2025. Фабрика мебели «Новый Вид» - мебельная фабрика, г. Краснодар.</span>
+                <a href="consent.html">Согласие на обработку ПДн</a>
+                <a href="cookie.html">Правила обработки cookie</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function toggleNav() { document.querySelector('nav').classList.toggle('active'); document.querySelector('.burger').classList.toggle('active'); }
+    </script>
+</body>
+</html>
