@@ -232,6 +232,51 @@
             </div>
         </div>
     </div>
+<div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <div class="modal-content">
+        <div class="modal-gallery">
+            <div>
+                <img class="modal-main-img" id="modalImg" src="" alt="">
+                <div class="modal-thumbs" id="modalThumbs"></div>
+            </div>
+            <div class="modal-text">
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <p class="modal-desc" id="modalDesc"></p>
+                <p class="modal-meta" id="modalMeta"></p>
+                <a href="index.html#contact" class="btn btn-fill" onclick="closeModal()">Оставить заявку</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleNav() { document.getElementById('nav').classList.toggle('active'); }
+    function closeMenu() { document.getElementById('nav').classList.remove('active'); }
+    const products = [
+        { title: "Детская с рабочим столом у окна", desc: "Рабочее место у окна с ящиками, высокий стеллаж, темная столешница", meta: "Фасады: МДФ эмаль (белый), шпон / Фурнитура: Blum", imgs: ["детские/2/2.jpeg"] },
+        { title: "Детская комната с шкафом и рабочим столом", desc: "Шкаф с рамочными фасадами, рабочая зона, столешница под дерево", meta: "Фасады: МДФ эмаль (белый), шпон / Фурнитура: латунь", imgs: ["детские/3/1.jpg","детские/3/2.jpg"] },
+        { title: "Детская с белыми фасадами и желтыми акцентами", desc: "Классический шкаф с фрезеровкой, зеркало, белые фасады, желтые вставки", meta: "Фасады: МДФ эмаль (белый), желтый акцент / Фурнитура: латунь", imgs: ["детские/6/1.jpg","детские/6/2.jpg"] },
+        { title: "Детская с зеркальной дверью и рабочим местом", desc: "Шкаф с зеркалом, рабочий стол, витрина со стеклом", meta: "Фасады: МДФ эмаль, стекло / Фурнитура: накладные ручки", imgs: ["детские/8/1.jpg","детские/8/2.jpg"] },
+        { title: "Детская с рифлеными фасадами и подвесной ТВ-зоной", desc: "Шкаф до потолка с рифлением, подвесная ТВ-зона, открытые полки", meta: "Фасады: МДФ эмаль (белый), ламель / Фурнитура: скрытые петли", imgs: ["детские/9/1.jpg"] },
+        { title: "Шкаф с рифлеными фасадами и открытой нишей", desc: "Шкаф до потолка, вертикальное рифление, открытая ниша, подсветка", meta: "Фасады: МДФ эмаль (жемчужный) / Наполнение: штанги, ящики", imgs: ["детские/11/1.jpg"] }
+    ];
+
+    function openModal(i) {
+        const p = products[i];
+        document.getElementById('modalTitle').textContent = p.title;
+        document.getElementById('modalDesc').textContent = p.desc;
+        document.getElementById('modalMeta').textContent = p.meta;
+        document.getElementById('modalImg').src = p.imgs[0];
+        document.getElementById('modalThumbs').innerHTML = p.imgs.map((img, idx) => `<img class="modal-thumb${idx===0?' active':''}" src="${img}" onclick="setMainImg('${img}', this)">`).join('');
+        document.getElementById('modal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeModal() { document.getElementById('modal').classList.remove('active'); document.body.style.overflow = ''; }
+    function setMainImg(src, el) { document.getElementById('modalImg').src = src; document.querySelectorAll('.modal-thumb').forEach(t => t.classList.remove('active')); el.classList.add('active'); }
+    document.querySelectorAll('.product-card').forEach((card, i) => { card.addEventListener('click', (e) => { e.preventDefault(); openModal(i); }); });
+    document.getElementById('modal').addEventListener('click', (e) => { if (e.target.id === 'modal') closeModal(); });
+</script>
 </footer>
 </body>
 </html>
