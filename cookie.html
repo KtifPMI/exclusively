@@ -43,9 +43,9 @@
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 40px; }
         .footer-brand .logo { margin-bottom: 16px; display: block; color: #fff; }
         .footer-brand p { font-size: 14px; color: #888; line-height: 1.6; max-width: 260px; }
-        .footer-links h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; color: #888; }
-        .footer-links a { display: block; font-size: 14px; color: #ccc; padding: 4px 0; transition: color 0.25s; }
-        .footer-links a:hover { color: #fff; }
+        .footer-col h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 20px; color: #888; }
+        .footer-col a { display: block; font-size: 14px; color: #bbb; margin-bottom: 12px; }
+        .footer-col a:hover { color: #fff; }
         .footer-bottom { border-top: 1px solid #333; padding-top: 20px; font-size: 12px; color: #666; display: flex; justify-content: space-between; }
         @media (max-width: 1024px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; } }
         @media (max-width: 768px) { .header-inner { flex-direction: row; justify-content: space-between; padding: 16px 0; } .logo { font-size: 18px; font-weight: 600; } nav { display: none; } .burger { display: block; width: 24px; height: 3px; background: #000; cursor: pointer; position: relative; } .burger::before { content: ''; position: absolute; left: 0; right: 0; height: 3px; background: #000; top: -8px; } .burger::after { content: ''; position: absolute; left: 0; right: 0; height: 3px; background: #000; bottom: -8px; } .nav { display: none; position: fixed; top: 60px; left: 0; right: 0; background: var(--bg-primary); flex-direction: column; padding: 20px; gap: 0; border-bottom: 1px solid var(--border); z-index: 999; transform: translateY(-20px); opacity: 0; transition: transform 0.3s ease, opacity 0.3s ease; } .nav.active { display: flex; transform: translateY(0); opacity: 1; } .nav a { padding: 12px 0; border-bottom: 1px solid var(--border); width: 100%; text-align: center; } .nav .btn { margin: 16px 0 0; width: 100%; } .footer-grid { grid-template-columns: 1fr; gap: 32px; } }
@@ -135,9 +135,12 @@
             </div>
         </div>
         <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px;">
+            <!-- Текст копирайта (слева) -->
             <span style="flex: 1; min-width: 300px; font-size: 13px; color: #666; line-height: 1.5;">
                 &copy; 2005-2025. Фабрика мебели «Новый Вид» - мебельная фабрика, г. Краснодар. Информация на сайте, касающаяся характеристик, стоимости товаров, носит информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями Статьи 437(2) Гражданского кодекса РФ.
             </span>
+            
+            <!-- Ссылки (справа, вертикально) -->
             <div style="display: flex; flex-direction: column; gap: 8px; text-align: right; min-width: 250px;">
                 <a href="consent.html" style="display: block; font-size: 13px; color: #666; text-decoration: none;">Согласие на обработку персональных данных</a>
                 <a href="policy.html" style="display: block; font-size: 13px; color: #666; text-decoration: none;">Политика конфиденциальности</a>
