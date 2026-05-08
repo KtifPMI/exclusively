@@ -26,9 +26,12 @@
         nav { display: flex; align-items: center; gap: 40px; }
         nav a { font-size: 14px; font-weight: 400; color: var(--text-secondary); transition: color 0.25s; }
         nav a:hover { color: var(--text-primary); }
-        nav .btn { background: #1a1a1a; color: #fff; padding: 12px 28px; border-radius: 100px; font-size: 14px; font-weight: 500; transition: all 0.25s; }
-        nav .btn:hover { background: #333; color: #fff; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; font-size: 14px; font-weight: 500; border-radius: 0; transition: all 0.25s; border: 1px solid var(--accent); background: transparent; color: var(--accent); }
+        .btn:hover { background: var(--accent); color: #fff; }
+        .btn-fill { background: var(--accent); color: #fff; }
+        .btn-fill:hover { background: #333; border-color: #333; }
         .burger { display: none; }
+        .header { height: 70px; }
         .hero { padding: 120px 0 60px; background: var(--bg-secondary); }
         .hero h1 { font-size: clamp(28px, 4vw, 48px); font-weight: 600; margin-bottom: 16px; }
         .hero p { font-size: 18px; color: var(--text-secondary); max-width: 600px; }
@@ -58,14 +61,14 @@
     <div class="container">
         <div class="header-inner">
             <a href="index.html" class="logo">Эксклюзивно</a>
+            <div class="burger" onclick="toggleMenu()"></div>
             <nav class="nav" id="nav">
                 <a href="index.html#catalog" onclick="closeMenu()">Каталог</a>
                 <a href="blog.html" style="color: var(--text-primary); font-weight: 600;" onclick="closeMenu()">Статьи</a>
                 <a href="index.html#contact" onclick="closeMenu()">Контакты</a>
                 <a href="https://max.ru/u/f9LHodD0cOJ4oot9tZUu5HWhNHvaCoajoGJ3lotpN-kotzz1863BuPH5dRY" target="_blank" onclick="closeMenu()">Max</a>
-                <a href="index.html#contact" class="btn" onclick="closeMenu()">Оставить заявку</a>
+                <a href="index.html#contact" class="btn btn-fill" onclick="closeMenu()">Оставить заявку</a>
             </nav>
-            <div class="burger" onclick="toggleMenu()"></div>
         </div>
     </div>
 </header>
