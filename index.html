@@ -111,13 +111,13 @@
             padding: 0 40px;
         }
         .hero h1 {
-            font-size: 64px;
+            font-size: clamp(36px, 5vw, 64px);
             font-weight: 300;
             line-height: 1.1;
             margin-bottom: 24px;
             color: #fff;
             letter-spacing: -2px;
-            white-space: nowrap; /* ЗАПРЕТ ПЕРЕНОСА СТРОК */
+            white-space: nowrap;
             width: 100%;
             display: block;
         }
@@ -134,14 +134,14 @@
         /* Section */
         .section { padding: 100px 0; }
         .section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; }
-        .section-title { font-size: 36px; font-weight: 300; letter-spacing: -0.5px; }
+        .section-title { font-size: clamp(24px, 3vw, 36px); font-weight: 300; letter-spacing: -0.5px; }
         .section-subtitle { font-size: 14px; color: var(--text-muted); margin-top: 8px; }
         
         /* Features */
         .features { background: var(--bg-secondary); }
         .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
         .feature-card { padding: 40px; background: var(--bg-surface); border: 1px solid var(--border); }
-        .feature-card h3 { font-size: 18px; font-weight: 500; margin-bottom: 12px; }
+        .feature-card h3 { font-size: clamp(16px, 1.5vw, 18px); font-weight: 500; margin-bottom: 12px; }
         .feature-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
         .feature-num { font-size: 12px; color: var(--text-muted); margin-bottom: 20px; display: block; }
         
@@ -151,7 +151,7 @@
         .catalog-card-img { position: relative; overflow: hidden; margin-bottom: 20px; }
         .catalog-card-img img { width: 100%; height: 320px; object-fit: cover; display: block; }
         .catalog-card-img::after { content: ''; position: absolute; inset: 0; border: 1px solid var(--border); pointer-events: none; }
-        .catalog-card h3 { font-size: 20px; font-weight: 400; margin-bottom: 8px; }
+        .catalog-card h3 { font-size: clamp(16px, 1.8vw, 20px); font-weight: 400; margin-bottom: 8px; }
         .catalog-card p { font-size: 14px; color: var(--text-muted); }
         
         /* Custom */
@@ -160,7 +160,7 @@
         .custom-img img { width: 100%; height: 500px; object-fit: cover; display: block; }
         .custom-img { position: relative; }
         .custom-img::after { content: ''; position: absolute; inset: 0; border: 1px solid var(--border); pointer-events: none; }
-        .custom h2 { font-size: 36px; font-weight: 300; margin-bottom: 24px; letter-spacing: -0.5px; }
+        .custom h2 { font-size: clamp(24px, 3vw, 36px); font-weight: 300; margin-bottom: 24px; letter-spacing: -0.5px; }
         .custom p { font-size: 16px; color: var(--text-secondary); margin-bottom: 24px; line-height: 1.7; }
         .custom-list { list-style: none; margin-bottom: 32px; }
         .custom-list li { padding: 16px 0; border-bottom: 1px solid var(--border); font-size: 15px; display: flex; align-items: center; gap: 12px; }
@@ -168,7 +168,7 @@
         
         /* Contact */
         .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; }
-        .contact-info h3 { font-size: 28px; font-weight: 300; margin-bottom: 32px; }
+        .contact-info h3 { font-size: clamp(22px, 2.5vw, 28px); font-weight: 300; margin-bottom: 32px; }
         .contact-item { margin-bottom: 24px; }
         .contact-item label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 4px; }
         .contact-item a, .contact-item span { font-size: 16px; }
@@ -192,7 +192,6 @@
         .footer-bottom { border-top: 1px solid #333; padding-top: 20px; font-size: 12px; color: #666; display: flex; justify-content: space-between; }
         
         @media (max-width: 1024px) {
-            .hero h1 { font-size: 48px; }
             .features-grid, .catalog-grid { grid-template-columns: repeat(2, 1fr); }
             .custom-grid { grid-template-columns: 1fr; }
             .contact-grid { grid-template-columns: 1fr; gap: 48px; }
@@ -213,15 +212,12 @@
             .section-header { flex-direction: column; align-items: flex-start; gap: 12px; }
             .form-row { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-            .hero h1 { font-size: 36px; }
             .hero p { font-size: 16px; }
         }
         
-        /* Добавлен специальный медиа-запрос для сохранения читаемости на средних экранах */
         @media (max-width: 1200px) {
             .hero h1 {
-                white-space: normal; /* Разрешаем перенос на ноутбуках, иначе текст обрежется */
-                font-size: 50px;
+                white-space: normal;
             }
         }
 
@@ -235,12 +231,12 @@
         .modal-thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 16px; }
         .modal-thumb { width: 100%; height: 90px; object-fit: cover; cursor: pointer; opacity: 0.6; transition: opacity 0.25s; }
         .modal-thumb:hover, .modal-thumb.active { opacity: 1; }
-        .modal-title { font-size: 44px; font-weight: 300; margin-bottom: 20px; color: #fff; }
-        .modal-desc { font-size: 22px; color: #ccc; line-height: 1.7; margin-bottom: 28px; }
+        .modal-title { font-size: clamp(28px, 4vw, 44px); font-weight: 300; margin-bottom: 20px; color: #fff; }
+        .modal-desc { font-size: clamp(16px, 2vw, 22px); color: #ccc; line-height: 1.7; margin-bottom: 28px; }
         .modal-meta { font-size: 16px; color: #888; margin-bottom: 28px; }
         .modal-text { display: flex; flex-direction: column; justify-content: center; }
-        @media (max-width: 90vw) { .modal-content { max-width: 80vw; margin: 3vw auto; padding: 0 3vw; } .modal-gallery { gap: 3vw; } .modal-main-img { height: 60vh; } .modal-title { font-size: 3vw; } .modal-desc { font-size: 1.5vw; } .modal-meta { font-size: 1.2vw; } .modal-thumbs { gap: 0.8vw; } .modal-thumb { height: 8vh; } }
-        @media (max-width: 768px) { .modal-gallery { grid-template-columns: 1fr; } .modal-main-img { height: 50vh; } .modal-close { top: 10px; right: 10px; width: 36px; height: 36px; font-size: 20px; } .modal-content { padding: 0 20px; margin: 20px auto; } .modal-title { font-size: 28px; } .modal-desc { font-size: 16px; } .modal-meta { font-size: 14px; } }
+        @media (max-width: 90vw) { .modal-content { max-width: 80vw; margin: 3vw auto; padding: 0 3vw; } .modal-gallery { gap: 3vw; } .modal-main-img { height: 60vh; } .modal-meta { font-size: 1.2vw; } .modal-thumbs { gap: 0.8vw; } .modal-thumb { height: 8vh; } }
+        @media (max-width: 768px) { .modal-gallery { grid-template-columns: 1fr; } .modal-main-img { height: 50vh; } .modal-close { top: 10px; right: 10px; width: 36px; height: 36px; font-size: 20px; } .modal-content { padding: 0 20px; margin: 20px auto; } .modal-meta { font-size: 14px; } }
         .catalog-card { cursor: pointer; transition: transform 0.25s; }
         .catalog-card:hover { transform: translateY(-4px); }
         
