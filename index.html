@@ -81,8 +81,6 @@
         nav a:hover { color: var(--text-primary); }
         .burger { display: none; }
         .header { height: 70px; }
-        
-        @media (max-width: 768px) { .burger { display: block; width: 24px; height: 3px; background: #000; } header { border-bottom: 3px solid #000; } }
         .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; font-size: 14px; font-weight: 500; border-radius: 0; transition: all 0.25s; border: 1px solid var(--accent); background: transparent; color: var(--accent); }
         .btn:hover { background: var(--accent); color: #fff; }
         .btn-fill { background: var(--accent); color: #fff; }
@@ -263,7 +261,7 @@
     <div class="container">
         <div class="header-inner">
             <a href="index.html" class="logo">Эксклюзивно</a>
-            
+            <div class="burger" onclick="toggleMenu()"></div>
             <nav class="nav" id="nav">
                 <a href="#catalog" onclick="closeMenu()">Каталог</a>
                 <a href="blog.html">Статьи</a>
