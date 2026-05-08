@@ -27,6 +27,13 @@
         li { margin-bottom: 8px; color: var(--text-secondary); }
         .back-link { display: inline-block; margin-bottom: 30px; color: var(--text-secondary); }
         .article-img { width: 100%; border-radius: 12px; margin: 24px 0; }
+        .contact-widget { background: #1a1a1a; color: #fff; padding: 32px; border-radius: 12px; margin: 32px 0; text-align: center; }
+        .contact-widget h3 { font-size: clamp(18px, 2vw, 22px); margin: 0 0 8px; color: #fff; }
+        .contact-widget p { margin: 0 0 16px; color: rgba(255,255,255,0.7); }
+        .contact-widget .phone { font-size: 22px; font-weight: 600; color: #fff; text-decoration: none; display: block; margin-bottom: 4px; }
+        .contact-widget .email { font-size: 14px; color: rgba(255,255,255,0.7); text-decoration: none; display: block; margin-bottom: 16px; }
+        .contact-widget .btn-w { display: inline-block; padding: 12px 28px; border: 1px solid #fff; color: #fff; text-decoration: none; font-size: 14px; font-weight: 500; transition: all 0.25s; }
+        .contact-widget .btn-w:hover { background: #fff; color: #1a1a1a; }
     </style>
 </head>
 <body>
@@ -57,7 +64,13 @@
         <h2>Закажите гостиную по последним трендам</h2>
         <p>Фабрика <a href="index.html">«Эксклюзивно» в Краснодаре</a> реализует любые идеи. Посмотрите наш <a href="living.html">каталог гостиных</a> и выберите свой вариант.</p>
         
-        <p><strong>Консультация:</strong> <a href="tel:+79181890174">+7 (918) 189-01-74</a></p>
+        <div class="contact-widget">
+            <h3>Готовы обсудить проект?</h3>
+            <p>Позвоните или напишите — мы подберём решение под ваш бюджет</p>
+            <a href="tel:+79181890174" class="phone">+7 (918) 189-01-74</a>
+            <a href="mailto:ruslan.sleptsov.ruslan1@gmail.com" class="email">ruslan.sleptsov.ruslan1@gmail.com</a>
+            <a href="index.html#contact" class="btn-w">Заказать бесплатный замер</a>
+        </div>
     </div>
 </body>
 </html>

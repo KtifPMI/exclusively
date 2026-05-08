@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --bg-primary: #f5f1eb; --bg-secondary: #eae5dc; --bg-surface: #ffffff; --text-primary: #1a1a1a; --text-secondary: #5a5a5a; --text-muted: #8a8a8a; --accent: #1a1a1a; --border: #d4d0c8; }
+        :root { --bg-primary: #f5f1eb; --text-primary: #1a1a1a; --text-secondary: #5a5a5a; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Manrope', sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.8; }
         .container { max-width: 800px; margin: 0 auto; padding: 100px 20px 60px; }
@@ -28,28 +28,13 @@
         .back-link { display: inline-block; margin-bottom: 30px; color: var(--text-secondary); }
         .article-img { width: 100%; border-radius: 12px; margin: 24px 0; }
         .tip { background: #fff; padding: 20px; border-radius: 8px; border-left: 4px solid #1a1a1a; margin: 24px 0; }
-a { text-decoration: none; color: inherit; }
-header { background: var(--bg-primary); border-bottom: 1px solid var(--border); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
-.header-inner { display: flex; align-items: center; justify-content: space-between; padding: 24px 0; }
-.logo { font-size: 20px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; }
-nav { display: flex; align-items: center; gap: 40px; }
-nav a { font-size: 14px; font-weight: 400; color: var(--text-secondary); transition: color 0.25s; }
-nav a:hover { color: var(--text-primary); }
-.burger { display: none; }
-.header { height: 70px; }
-@media (max-width: 768px) { .burger { display: block; width: 24px; height: 3px; background: var(--text-primary); cursor: pointer; position: relative; } .burger::before { content: ''; position: absolute; left: 0; right: 0; height: 3px; background: var(--text-primary); top: -8px; } .burger::after { content: ''; position: absolute; left: 0; right: 0; height: 3px; background: var(--text-primary); bottom: -8px; } .nav { display: none; position: fixed; top: 60px; left: 0; right: 0; background: var(--bg-primary); flex-direction: column; padding: 20px; gap: 0; border-bottom: 1px solid var(--border); z-index: 999; transform: translateY(-20px); opacity: 0; transition: transform 0.3s ease, opacity 0.3s ease; } .nav.active { display: flex; transform: translateY(0); opacity: 1; } .nav a { padding: 12px 0; border-bottom: 1px solid var(--border); width: 100%; text-align: center; } .nav .btn { margin: 16px 0 0; width: 100%; } }
-.btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; font-size: 14px; font-weight: 500; border-radius: 0; cursor: pointer; transition: all 0.25s; border: 1px solid var(--accent); background: transparent; color: var(--accent); }
-.btn:hover { background: var(--accent); color: #fff; }
-.btn-fill { background: var(--accent); color: #fff; }
-.btn-fill:hover { background: #333; border-color: #333; }
-footer { background: var(--text-primary); color: #fff; padding: 60px 0 30px; }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 40px; }
-.footer-brand .logo { margin-bottom: 16px; display: block; color: #fff; }
-.footer-brand p { font-size: 14px; color: #888; line-height: 1.6; max-width: 260px; }
-.footer-col h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 20px; color: #888; }
-.footer-col a { display: block; font-size: 14px; color: #bbb; margin-bottom: 12px; }
-.footer-col a:hover { color: #fff; }
-.footer-bottom { border-top: 1px solid #333; padding-top: 20px; font-size: 12px; color: #666; display: flex; justify-content: space-between; }
+        .contact-widget { background: #1a1a1a; color: #fff; padding: 32px; border-radius: 12px; margin: 32px 0; text-align: center; }
+        .contact-widget h3 { font-size: clamp(18px, 2vw, 22px); margin: 0 0 8px; color: #fff; }
+        .contact-widget p { margin: 0 0 16px; color: rgba(255,255,255,0.7); }
+        .contact-widget .phone { font-size: 22px; font-weight: 600; color: #fff; text-decoration: none; display: block; margin-bottom: 4px; }
+        .contact-widget .email { font-size: 14px; color: rgba(255,255,255,0.7); text-decoration: none; display: block; margin-bottom: 16px; }
+        .contact-widget .btn-w { display: inline-block; padding: 12px 28px; border: 1px solid #fff; color: #fff; text-decoration: none; font-size: 14px; font-weight: 500; transition: all 0.25s; }
+        .contact-widget .btn-w:hover { background: #fff; color: #1a1a1a; }
     </style>
 </head>
 <body>
@@ -79,7 +64,13 @@ footer { background: var(--text-primary); color: #fff; padding: 60px 0 30px; }
         <h2>Закажите коммерческую мебель для вашего бизнеса</h2>
         <p>Фабрика <a href="office.html">«Эксклюзивно» создает мебель для офисов, магазинов и ресторанов</a>. Мы учитываем специфику вашего бизнеса и нагрузки.</p>
         
-        <p><strong>Расчет проекта:</strong> <a href="tel:+79181890174">+7 (918) 189-01-74</a></p>
+        <div class="contact-widget">
+            <h3>Готовы обсудить проект?</h3>
+            <p>Позвоните или напишите — мы подберём решение под ваш бюджет</p>
+            <a href="tel:+79181890174" class="phone">+7 (918) 189-01-74</a>
+            <a href="mailto:ruslan.sleptsov.ruslan1@gmail.com" class="email">ruslan.sleptsov.ruslan1@gmail.com</a>
+            <a href="index.html#contact" class="btn-w">Заказать бесплатный замер</a>
+        </div>
     </div>
 </body>
 </html>
