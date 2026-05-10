@@ -48,7 +48,7 @@
         .footer-col a:hover { color: #fff; }
         .footer-bottom { border-top: 1px solid #333; padding-top: 20px; font-size: 12px; color: #666; display: flex; justify-content: space-between; }
         @media (max-width: 1024px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; } }
-        @media (max-width: 768px) { .header-inner { flex-direction: row; justify-content: space-between; padding: 16px 0; } .logo { font-size: 18px; font-weight: 600; } nav { display: none; } .burger { display: block; width: 24px; height: 3px; background: #000; cursor: pointer; position: relative; } .burger::before { content: ''; position: absolute; left: 0; right: 0; height: 3px; background: #000; top: -8px; } .burger::after { content: ''; position: absolute; left: 0; right: 0; height: 3px; background: #000; bottom: -8px; } .nav { display: none; position: fixed; top: 60px; left: 0; right: 0; background: var(--bg-primary); flex-direction: column; padding: 20px; gap: 0; border-bottom: 1px solid var(--border); z-index: 999; transform: translateY(-20px); opacity: 0; transition: transform 0.3s ease, opacity 0.3s ease; } .nav.active { display: flex; transform: translateY(0); opacity: 1; } .nav a { padding: 12px 0; border-bottom: 1px solid var(--border); width: 100%; text-align: center; } .nav .btn { margin: 16px 0 0; width: 100%; } .footer-grid { grid-template-columns: 1fr; gap: 32px; } }
+        @media (max-width: 768px) { .header-inner { flex-direction: row; justify-content: space-between; padding: 16px 0; } .logo { font-size: 18px; font-weight: 600; } nav { display: none; } .burger { display: block; width: 24px; height: 3px; background: #000; cursor: pointer; position: relative; } .burger::before { content: ''; position: absolute; left: 0; right: 0; height: 3px; background: #000; top: -8px; } .burger::after { content: ''; position: absolute; left: 0; right: 0; height: 3px; background: #000; bottom: -8px; } .nav { display: none; position: fixed; top: 60px; left: 0; right: 0; background: var(--bg-primary); flex-direction: column; padding: 20px; gap: 0; border-bottom: 1px solid var(--border); z-index: 999; transform: translateY(-20px); opacity: 0; transition: transform 0.3s ease, opacity 0.3s ease; } .nav.active { display: flex; transform: translateY(0); opacity: 1; } .nav a { padding: 12px 0; border-bottom: 1px solid var(--border); width: 100%; text-align: center; } .nav .btn { margin: 16px 0 0; width: 100%; } .breadcrumb { padding-top: 80px; } .content { padding: 40px 0; } .footer-grid { grid-template-columns: 1fr; gap: 32px; } }
     </style>
 </head>
     <body>
@@ -80,11 +80,13 @@
             <h2>1. Что такое cookie</h2>
             <p>Cookie — небольшие файлы, которые браузер сохраняет на устройстве для распознавания сессии и улучшения работы сайта.</p>
             <h2>2. Какие cookie мы используем</h2>
+            <div style="overflow-x: auto;">
             <table>
                 <tr><th>Тип</th><th>Пример</th><th>Срок хранения</th><th>Цель</th></tr>
                 <tr><td>Обязательные</td><td>PHPSESSID</td><td>сеанс</td><td>Корректная работа форм и навигации</td></tr>
                 <tr><td>Аналитические</td><td>_ym_uid, _ym_d, yandexuid</td><td>до 24 мес.</td><td>Статистика посещаемости через «Яндекс Метрику»</td></tr>
             </table>
+            </div>
             <h2>3. Кто получает cookie-данные</h2>
             <ul>
                 <li>ООО «Регистратор доменных имён РЕГ.РУ» — хранение файлов в ЦОД: г. Москва, площадь Академика Курчатова, д. 1, здание 301, 5 этаж, помещение 501а;</li>
