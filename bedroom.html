@@ -387,7 +387,25 @@
     document.getElementById('modal').addEventListener('click', (e) => { if (e.target.id === 'modal') closeModal(); });
 </script>
 
-
+<div class="max-widget" id="maxWidget">
+    <div class="widget-buttons">
+        <a href="tel:+79181890174" class="widget-btn phone-btn" style="background: #25D366;" aria-label="Позвонить">
+            <img src="png-klev-club-j00b-p-znachok-telefona-trubki-png-8 (1).png" alt="Телефон">
+            <span class="widget-tooltip">+7 (918) 189-01-74</span>
+        </a>
+        <a href="https://max.ru/u/f9LHodD0cOJ4oot9tZUu5HWhNHvaCoajoGJ3lotpN-kotzz1863BuPH5dRY" target="_blank" class="widget-btn" style="background: #2AABEE;" aria-label="Max">
+            <img src="Max_logo_2025.png" alt="Max">
+            <span class="widget-tooltip">Max</span>
+        </a>
+        <a href="https://t.me/Ruslan_Slep" target="_blank" class="widget-btn" style="background: #0088cc;" aria-label="Telegram">
+            <img src="Telegram_logo.svg.webp" alt="Telegram">
+            <span class="widget-tooltip">Telegram</span>
+        </a>
+    </div>
+    <button class="widget-toggle" onclick="document.getElementById('maxWidget').classList.toggle('expanded')" aria-label="Открыть меню">
+        <img src="png-klev-club-j00b-p-znachok-telefona-trubki-png-8 (1).png" alt="Меню">
+    </button>
+</div>
 
 </body>
 </html>
