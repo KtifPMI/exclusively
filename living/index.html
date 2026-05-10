@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Гостиные на заказ в Краснодаре от фабрики «Эксклюзивно». ТВ-зоны, стеллажи, перегородки, стенки — индивидуальный дизайн, премиальные материалы (МДФ эмаль, шпон), 3D-проект, бесплатный замер, гарантия 5 лет. Создайте гостиную вашей мечты!">
+    <meta name="keywords" content="гостиные на заказ Краснодар, мебель для гостиной, ТВ-зона, стеллажи, перегородки, стенка для гостиной, МДФ эмаль, шпон, дизайн гостиной, фабрика мебели">
+    <meta property="og:title" content="Гостиные на заказ в Краснодаре — Эксклюзивно">
+    <meta property="og:description" content="Индивидуальный дизайн гостиных, премиальные материалы. ТВ-зоны, стеллажи, перегородки. 3D-проект, бесплатный замер, гарантия 5 лет. Закажите мебель для гостиной под ваш интерьер.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:image" content="https://exclusively.ru/favicon.jpg">
+    <meta property="og:url" content="https://exclusively.ru/living/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Гостиные на заказ в Краснодаре — Эксклюзивно">
+    <meta name="twitter:description" content="Гостиные на заказ от фабрики в Краснодаре. ТВ-зоны, стеллажи, перегородки. Премиум качество, 5 лет гарантии.">
+    <meta name="twitter:image" content="https://exclusively.ru/favicon.jpg">
+    <link rel="canonical" href="https://exclusively.ru/living/">
+    <title>Гостиные на заказ в Краснодаре — Эксклюзивно</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Гостиные на заказ",
+        "description": "Мебель для гостиной: ТВ-зоны, стеллажи, перегородки. Индивидуальный дизайн, премиальные материалы.",
+        "brand": {"@type": "Brand", "name": "Эксклюзивно"},
+        "offers": {"@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "RUB"}
+    }
+    </script>
+    <style>
+        :root { --bg-primary: #f5f1eb; --bg-secondary: #eae5dc; --bg-surface: #ffffff; --text-primary: #1a1a1a; --text-secondary: #5a5a5a; --text-muted: #8a8a8a; --accent: #1a1a1a; --border: #d4d0c8; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Manrope', -apple-system, sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+        a { text-decoration: none; color: inherit; }
+        header { background: var(--bg-primary); border-bottom: 1px solid var(--border); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 24px 0; }
+        .logo { font-size: 20px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; }
+        nav { display: flex; align-items: center; gap: 40px; }
+        nav a { font-size: 14px; font-weight: 400; color: var(--text-secondary); transition: color 0.25s; }
+        nav a:hover { color: var(--text-primary); }
+        .burger { display: none; }
+        .header { height: 70px; }
+        @media (max-width: 768px) { .burger { display: block; } }
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; font-size: 14px; font-weight: 500; border-radius: 0; cursor: pointer; transition: all 0.25s; border: 1px solid var(--accent); background: transparent; color: var(--accent); }
+        .btn:hover { background: var(--accent); color: #fff; }
+        .btn-fill { background: var(--accent); color: #fff; }
+        .btn-fill:hover { background: #333; border-color: #333; }
+        .breadcrumb { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--text-muted); margin-bottom: 16px; padding-top: 100px; }
+        .breadcrumb a { color: var(--text-secondary); }
+        .hero { padding-bottom: 40px; background: var(--bg-primary); }
+        .hero h1 { font-size: clamp(28px, 4vw, 48px); font-weight: 300; margin-bottom: 16px; letter-spacing: -0.5px; }
+        .hero p { font-size: 16px; color: var(--text-secondary); max-width: 600px; }
+        .products { padding: 60px 0; }
+        .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .product-card { background: var(--bg-surface); border: 1px solid var(--border); }
+        .product-card-img { position: relative; }
+        .product-card-img img { width: 100%; height: 280px; object-fit: cover; display: block; }
+        .product-card-img::after { content: ''; position: absolute; inset: 0; border: 1px solid var(--border); pointer-events: none; }
+        .product-card-content { padding: 24px; }
+        .product-card h3 { font-size: 18px; font-weight: 500; margin-bottom: 8px; }
+        .product-card p { font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; }
+        .product-card-price { font-size: 16px; font-weight: 600; margin-bottom: 16px; }
+        .cta { padding: 80px 0; background: var(--bg-secondary); text-align: center; }
+        .cta h2 { font-size: clamp(22px, 2.8vw, 32px); font-weight: 300; margin-bottom: 16px; }
+        .cta p { font-size: 16px; color: var(--text-secondary); margin-bottom: 24px; }
+        footer { background: var(--text-primary); color: #fff; padding: 60px 0 30px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 40px; }
+        .footer-brand .logo { margin-bottom: 16px; display: block; color: #fff; }
+        .footer-brand p { font-size: 14px; color: #888; line-height: 1.6; max-width: 260px; }
+        .footer-col h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 20px; color: #888; }
+        .footer-col a { display: block; font-size: 14px; color: #bbb; margin-bottom: 12px; }
+        .footer-col a:hover { color: #fff; }
+        .footer-bottom { border-top: 1px solid #333; padding-top: 20px; font-size: 12px; color: #666; display: flex; justify-content: space-between; }
+        @media (max-width: 1024px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .container { padding: 0 20px; } .header { height: 60px; } .header-inner { flex-direction: row; justify-content: space-between; padding: 16px 0; } .logo { font-size: 18px; font-weight: 600; } nav { display: none; } .burger { width: 24px; height: 3px; background: var(--text-primary); cursor: pointer; position: relative; } .burger::before { content: ''; position: absolute; left: 0; right: 0; height: 3px; background: var(--text-primary); top: -8px; } .burger::after { content: ''; position: absolute; left: 0; right: 0; height: 3px; background: var(--text-primary); bottom: -8px; } .nav { display: none; position: fixed; top: 60px; left: 0; right: 0; background: var(--bg-primary); flex-direction: column; padding: 20px; gap: 0; border-bottom: 1px solid var(--border); z-index: 999; transform: translateY(-20px); opacity: 0; transition: transform 0.3s ease, opacity 0.3s ease; } .nav.active { display: flex; transform: translateY(0); opacity: 1; } .nav a { padding: 12px 0; border-bottom: 1px solid var(--border); width: 100%; text-align: center; } .nav .btn { margin: 16px 0 0; width: 100%; } .products-grid { grid-template-columns: 1fr; } .hero { padding-bottom: 24px; } .breadcrumb { padding-top: 80px; } .footer-grid { grid-template-columns: 1fr; gap: 24px; } footer { padding: 40px 0 20px; } .product-card-img img { height: 220px; } .product-card-content { padding: 16px; } .product-card h3 { font-size: 16px; } .cta { padding: 48px 0; } }
+
+        .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 2000; overflow-y: auto; }
+        .modal.active { display: block; }
+        .modal-close { position: absolute; top: 20px; right: 20px; width: 40px; height: 40px; background: none; border: 1px solid #fff; color: #fff; font-size: 24px; cursor: pointer; z-index: 10; }
+        .modal-close:hover { background: #fff; color: #000; }
+.modal-content { max-width: 1600px; margin: 40px auto; padding: 0 50px; }
+        .modal-gallery { display: grid; grid-template-columns: 1.3fr 1fr; gap: 60px; align-items: center; }
+        .modal-main-img { width: 100%; height: 80vh; max-height: 750px; object-fit: cover; display: block; }
+        .modal-thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 16px; }
+        .modal-thumb { width: 100%; height: 90px; object-fit: cover; cursor: pointer; opacity: 0.6; transition: opacity 0.25s; }
+        .modal-thumb:hover, .modal-thumb.active { opacity: 1; }
+        .modal-title { font-size: clamp(28px, 4vw, 44px); font-weight: 300; margin-bottom: 20px; color: #fff; }
+        .modal-desc { font-size: clamp(16px, 2vw, 22px); color: #ccc; line-height: 1.7; margin-bottom: 28px; }
+        .modal-meta { font-size: 16px; color: #888; margin-bottom: 28px; }
+        .modal-text { display: flex; flex-direction: column; justify-content: center; }
+        @media (max-width: 768px) { .modal-gallery { grid-template-columns: 1fr; } .modal-main-img { height: 50vh; } .modal-close { top: 10px; right: 10px; width: 36px; height: 36px; font-size: 20px; } .modal-content { padding: 0 20px; margin: 20px auto; } .modal-meta { font-size: 14px; } }
+        .product-card { cursor: pointer; transition: transform 0.25s; }
+         .product-card:hover { transform: translateY(-4px); }
+        
+        /* Max Widget */
+        .max-widget { position: fixed; bottom: 24px; right: 24px; z-index: 3000; display: flex; flex-direction: column; align-items: flex-end; }
+        .widget-toggle { width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #2AABEE, #229ED9); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(42, 171, 238, 0.4); transition: transform 0.3s; }
+        .widget-toggle:hover { transform: scale(1.08); }
+        .widget-toggle img { width: 28px; height: 28px; filter: brightness(0) invert(1); }
+        .widget-buttons { display: flex; flex-direction: column; gap: 12px; margin-bottom: 12px; opacity: 0; transform: translateY(20px); transition: opacity 0.3s, transform 0.3s; pointer-events: none; }
+        .max-widget.expanded .widget-buttons { opacity: 1; transform: translateY(0); pointer-events: auto; }
+        .widget-btn { width: 56px; height: 56px; border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,0.2); transition: transform 0.2s; text-decoration: none; position: relative; }
+        .widget-btn:hover { transform: scale(1.08); }
+        .widget-btn img { width: 28px; height: 28px; object-fit: contain; }
+        .phone-btn img { filter: brightness(0) invert(1); }
+        .widget-tooltip { position: absolute; right: 70px; top: 50%; transform: translateY(-50%); background: #333; color: #fff; padding: 8px 16px; border-radius: 6px; font-size: 14px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.2s; }
+        .widget-btn:hover .widget-tooltip { opacity: 1; }
+        .max-widget.expanded .widget-toggle img { filter: none; }
+        @media (max-width: 768px) { .max-widget { bottom: 16px; right: 16px; } .widget-toggle { width: 52px; height: 52px; } .widget-toggle img { width: 24px; height: 24px; } .widget-btn { width: 48px; height: 48px; } .widget-btn img { width: 24px; height: 24px; } .widget-tooltip { display: none; } }
+        .cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #1a1a1a; color: #fff; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; z-index: 9999; font-size: 14px; line-height: 1.5; }
+        .cookie-banner p { margin: 0; }
+        .cookie-banner a { color: #aaa; text-decoration: underline; }
+        .cookie-banner button { padding: 8px 24px; background: #fff; color: #1a1a1a; border: none; cursor: pointer; font-size: 14px; font-weight: 500; white-space: nowrap; border-radius: 0; }
+        .cookie-banner button:hover { background: #e0e0e0; }
+        @media (max-width: 768px) { .cookie-banner { flex-direction: column; text-align: center; padding: 12px 16px; } }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="header-inner">
+            <a href="/" class="logo">Эксклюзивно</a>
+            <div class="burger" onclick="toggleNav()"></div>
+             <nav class="nav" id="nav">
+                 <a href="/#catalog">Каталог</a>
+                 <a href="/blog/">Статьи</a>
+                  <a href="/#contact">Контакты</a>
+                  <a href="/about/">О нас</a>
+                  <a href="/#contact" class="btn btn-fill">Оставить заявку</a>
+             </nav>
+        </div>
+    </div>
+</header>
+<section class="hero">
+    <div class="container">
+        <div class="breadcrumb"><a href="/">Главная</a> / <span>Гостиные</span></div>
+        <h1>Гостиные на заказ в Краснодаре</h1>
+        <p>ТВ-зоны, стеллажи, перегородки, стенки под ваш интерьер. Индивидуальный дизайн.</p>
+    </div>
+</section>
+<section class="products">
+    <div class="container">
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-card-img"><img src="гостинная/7/12.png" alt="Монохромный мебельный ансамбль с акцентом на текстуру"></div>
+                <div class="product-card-content">
+                    <h3>Монохромная гостиная с рифлеными фасадами</h3>
+                    <p>Графитовый ансамбль с рифлеными фасадами и рабочей зоной</p>
+                    
+                    
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card-img"><img src="гостинная/10/1.jpg" alt="Телевизионная зона, интегрированная с рабочим кабинетом"></div>
+                <div class="product-card-content">
+                    <h3>Гостиная с ТВ-зоной и рабочим местом</h3>
+                    <p>Двухуровневая стенка: ТВ-зона, рабочее место, кирпичная стена</p>
+                    
+                    
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card-img"><img src="гостинная/12/1.jpg" alt="Акцентная ТВ-зона с панно и системой хранения"></div>
+                <div class="product-card-content">
+                    <h3>ТВ-зона с каменным панно и подсветкой</h3>
+                    <p>Панно под камень, золотой профиль, подвесная консоль</p>
+                    
+                    
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card-img"><img src="гостинная/16/1.jpg" alt="Мебельная композиция для гостиной с акцентом на порядок"></div>
+                <div class="product-card-content">
+                    <h3>Мебельная композиция для гостиной с акцентом на порядок</h3>
+                    <p>Комплексная система хранения: высокий шкаф, открытые полки, ниша под ТВ</p>
+                    
+                    
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card-img"><img src="гостинная/18/1.jpg" alt="Единая мебельная концепция для открытого пространства"></div>
+                <div class="product-card-content">
+                    <h3>Мебель для гостиной-студии с зонированием</h3>
+                    <p>Шкаф-перегородка, комод, зонирование белым матовым фасадом</p>
+                    
+                    
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card-img"><img src="гостинная/19/1.jpg" alt="Пространство, где встречаются эстетика и эргономика"></div>
+                <div class="product-card-content">
+                    <h3>Кухня-гостиная в белом с мраморным фартуком</h3>
+                    <p>Кухня-гостиная в белом цвете с мраморным фартуком</p>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="cta">
+    <div class="container">
+        <h2>Закажите гостиную по индивидуальному проекту</h2>
+        <p>Создадим уникальный интерьер для вашего дома</p>
+        <a href="/#contact" class="btn btn-fill">Оставить заявку</a>
+    </div>
+</section>
+
+<div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <div class="modal-content">
+        <div class="modal-gallery">
+            <div>
+                <img class="modal-main-img" id="modalImg" src="" alt="">
+                <div class="modal-thumbs" id="modalThumbs"></div>
+            </div>
+            <div class="modal-text">
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <p class="modal-desc" id="modalDesc"></p>
+                <p class="modal-meta" id="modalMeta"></p>
+                 <a href="/#contact" class="btn btn-fill" onclick="closeModal()">Оставить заявку</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function toggleNav() { document.getElementById('nav').classList.toggle('active'); }
+const products = [
+    { title: "Монохромный мебельный ансамбль с акцентом на текстуру", desc: "Монохромный мебельный ансамбль с акцентом на текстуру. Высокий шкаф объединяет гладкие и вертикально рифленые фасады. Подвесная тумба под медиаустройства продолжает общую стилистику. Рабочее место у окна с консольной столешницей. Черные профильные ручки, интеграция в архитектурный объем.", meta: "Фасады: МДФ Soft Touch (графит), рифление / Фурнитура: профильные ручки (черный матовый)", imgs: ["гостинная/7/12.png","гостинная/7/11.jpeg"]},
+    { title: "Телевизионная зона, интегрированная с рабочим кабинетом", desc: "Стильная двухуровневая мебельная композиция. Сочетание белого кирпича, темного дерева и светлых фасадов. Функциональное объединение зоны отдыха и домашнего офиса. Двухуровневая система: консоль с рабочей столешницей из темного дерева, нижний напольный блок. Декоративная кирпичная кладка, система push-to-open.", meta: "Фасады: МДФ эмаль (белый матовый), шпон (орех) / Особенности: двухуровневая система, интеграция рабочего стола / Фурнитура: скрытые петли", imgs: ["гостинная/10/1.jpg","гостинная/10/2.jpg"] },
+    { title: "Акцентная ТВ-зона с панно и системой хранения", desc: "Природная фактура в современной оправе. Центральный элемент — панно с текстурой натурального камня, обрамленное золотым профилем. Напольная консоль с белыми матовыми фасадами без ручек. Толстая столешница цвета темного дерева, вертикальный стеллаж справа с открытыми нишами. Трековое освещение с золотыми светильниками.", meta: "Фасады: МДФ эмаль (белый матовый) / Столешница и стеллаж: шпон (орех) / Особенности: золотая рамка, трековое освещение", imgs: ["гостинная/12/1.jpg","гостинная/12/2.jpg"] },
+    { title: "Мебельная композиция для гостиной с акцентом на порядок", desc: "Этот проект решает классическую задачу гостиной: как разместить максимум вещей, не превращая комнату в склад. Композиция построена по принципу «контейнер + витрина». Светло-серый матовый цвет фасадов мягко сливается с отделкой стен. Высокий закрытый шкаф слева, вертикальная секция открытых полок по центру, нижняя консоль и антресоли. Ниша под телевизор.", meta: "Фасады: МДФ с матовым покрытием (светло-серый) / Конфигурация: Высокий шкаф, открытые вертикальные полки, антресоли, нижняя консоль / Особенности: Ниша под ТВ, система открывания без видимых ручек", imgs: ["гостинная/16/1.jpg","гостинная/16/2.jpg"] },
+    { title: "Единая мебельная концепция для открытого пространства", desc: "Комплексная система хранения и зонирование в одной комнате. Высокий шкаф в прихожей зоне и стеллаж-перегородка с комодом. Белый матовый фасад, черная фурнитура, сочетание глухих и открытых секций. Комод с тремя вместительными ящиками, ажурная стеллажная секция для зонирования пространства.", meta: "Фасады: МДФ эмаль (белый матовый), ЛДСП под дерево / Фурнитура: профильные ручки (черный матовый) / Особенности: зонирование мебелью, комбинация глухих шкафов и открытых стеллажей", imgs: ["гостинная/18/1.jpg","гостинная/18/2.jpg"] },
+    { title: "Пространство, где встречаются эстетика и эргономика", desc: "Кухня-гостиная в белом цвете с мраморным фартуком. Просторная кухня-гостиная с матовыми белыми фасадами без видимой фурнитуры. Мраморный фартук, встроенная черная техника, обеденная зона с круглой люстрой. Высокая витрина с подсветкой и черными профильными ручками.", meta: "Фасады: МДФ эмаль (белый матовый), стекло / Фартук: керамогранит под мрамор / Особенности: встроенная техника, подсветка рабочей зоны и витрины", imgs: ["гостинная/19/1.jpg","гостинная/19/2.jpg","гостинная/19/3.jpg","гостинная/19/4.jpg"] }
+];
+
+function openModal(i) {
+    const p = products[i];
+    document.getElementById('modalTitle').textContent = p.title;
+    document.getElementById('modalDesc').textContent = p.desc;
+    document.getElementById('modalMeta').textContent = p.meta;
+    document.getElementById('modalImg').src = p.imgs[0];
+    document.getElementById('modalThumbs').innerHTML = p.imgs.map((img, idx) => `<img class="modal-thumb${idx===0?' active':''}" src="${img}" onclick="setMainImg('${img}', this)">`).join('');
+    document.getElementById('modal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+function closeModal() { document.getElementById('modal').classList.remove('active'); document.body.style.overflow = ''; }
+function setMainImg(src, el) { document.getElementById('modalImg').src = src; document.querySelectorAll('.modal-thumb').forEach(t => t.classList.remove('active')); el.classList.add('active'); }
+document.querySelectorAll('.product-card').forEach((card, i) => { card.addEventListener('click', (e) => { e.preventDefault(); openModal(i); }); });
+document.getElementById('modal').addEventListener('click', (e) => { if (e.target.id === 'modal') closeModal(); });
+</script>
+
+<section class="section" id="seo-text" style="padding: 60px 0;">
+    <div class="container">
+        <h2 style="font-size: clamp(22px, 2.8vw, 32px); font-weight: 300; margin-bottom: 24px; text-align: center;">Часто задаваемые вопросы</h2>
+        <div class="faq-list" style="max-width: 800px; margin: 0 auto;">
+            <details class="faq-item" style="margin-bottom: 16px; padding: 20px; background: #fff; border-radius: 8px; border: 1px solid var(--border); cursor: pointer;">
+                <summary style="font-weight: 600; font-size: 16px; color: var(--text-primary); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                    Сколько времени занимает изготовление мебели на заказ?
+                    <span style="font-size: 20px; color: var(--text-muted);">+</span>
+                </summary>
+                <p style="margin-top: 12px; color: var(--text-secondary); line-height: 1.6;">Стандартный срок производства мебели — от 14 до 30 рабочих дней в зависимости от сложности проекта. Кухни с каменными столешницами могут занимать до 45 дней. Мы всегда согласовываем точные сроки перед подписанием договора.</p>
+            </details>
+            
+            <details class="faq-item" style="margin-bottom: 16px; padding: 20px; background: #fff; border-radius: 8px; border: 1px solid var(--border); cursor: pointer;">
+                <summary style="font-weight: 600; font-size: 16px; color: var(--text-primary); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                    Какие материалы вы используете для фасадов?
+                    <span style="font-size: 20px; color: var(--text-muted);">+</span>
+                </summary>
+                <p style="margin-top: 12px; color: var(--text-secondary); line-height: 1.6;">Мы работаем с МДФ (эмаль, плёнка, пластик), натуральным шпоном и камнем. Для столешниц используем пластик, акрил, кварцевый агломерат и закаленное стекло. Все материалы сертифицированы и безопасны для здоровья.</p>
+            </details>
+            
+            <details class="faq-item" style="margin-bottom: 16px; padding: 20px; background: #fff; border-radius: 8px; border: 1px solid var(--border); cursor: pointer;">
+                <summary style="font-weight: 600; font-size: 16px; color: var(--text-primary); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                    Делаете ли вы замер помещения?
+                    <span style="font-size: 20px; color: var(--text-muted);">+</span>
+                </summary>
+                <p style="margin-top: 12px; color: var(--text-secondary); line-height: 1.6;">Да, мы предоставляем замер помещения в Краснодаре и ближайших пригородах. Наш специалист приедет с каталогом материалов, снимет точные размеры и поможет спроектировать мебель под ваши задачи.</p>
+            </details>
+            
+            <details class="faq-item" style="margin-bottom: 16px; padding: 20px; background: #fff; border-radius: 8px; border: 1px solid var(--border); cursor: pointer;">
+                <summary style="font-weight: 600; font-size: 16px; color: var(--text-primary); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                    Можно ли заказать мебель по своему эскизу?
+                    <span style="font-size: 20px; color: var(--text-muted);">+</span>
+                </summary>
+                <p style="margin-top: 12px; color: var(--text-secondary); line-height: 1.6;">Конечно! Мы работаем по индивидуальным проектам. Приносите свой эскиз, фотографию или описание — наши дизайнеры превратят вашу идею в 3D-проект и изготовят мебель точно по вашим пожеланиям.</p>
+            </details>
+            
+            <details class="faq-item" style="margin-bottom: 16px; padding: 20px; background: #fff; border-radius: 8px; border: 1px solid var(--border); cursor: pointer;">
+                <summary style="font-weight: 600; font-size: 16px; color: var(--text-primary); list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                    Какой гарантийный срок на мебель?
+                    <span style="font-size: 20px; color: var(--text-muted);">+</span>
+                </summary>
+                <p style="margin-top: 12px; color: var(--text-secondary); line-height: 1.6;">Мы предоставляем гарантию 5 лет на всю мебель. В течение этого срока мы устраняем любые производственные дефекты.</p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<section class="cross-links" style="padding: 60px 0; background: var(--bg-secondary);">
+    <div class="container" style="text-align: center;">
+        <h2 style="font-size: clamp(22px, 2.8vw, 32px); font-weight: 300; margin-bottom: 24px;">Смотрите также другие категории мебели</h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;">
+            <a href="/kitchen/" class="btn">Кухни на заказ</a>
+            <a href="/bedroom/" class="btn">Спальни на заказ</a>
+            <a href="/kids/" class="btn">Детские комнаты</a>
+            <a href="/hallway/" class="btn">Прихожие и шкафы</a>
+            <a href="/office/" class="btn">Коммерческая мебель</a>
+        </div>
+    </div>
+</section>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Сколько времени занимает изготовление мебели на заказ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Стандартный срок производства мебели — от 14 до 30 рабочих дней в зависимости от сложности проекта. Кухни с каменными столешницами могут занимать до 45 дней. Мы всегда согласовываем точные сроки перед подписанием договора."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Какие материалы вы используете для фасадов?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Мы работаем с МДФ (эмаль, плёнка, пластик), натуральным шпоном и камнем. Для столешниц используем пластик, акрил, кварцевый агломерат и закаленное стекло. Все материалы сертифицированы и безопасны для здоровья."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Делаете ли вы замер помещения?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Да, мы предоставляем замер помещения в Краснодаре и ближайших пригородах. Наш специалист приедет с каталогом материалов, снимет точные размеры и поможет спроектировать мебель под ваши задачи."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Можно ли заказать мебель по своему эскизу?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Конечно! Мы работаем по индивидуальным проектам. Приносите свой эскиз, фотографию или описание — наши дизайнеры превратят вашу идею в 3D-проект и изготовят мебель точно по вашим пожеланиям."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Какой гарантийный срок на мебель?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Мы предоставляем гарантию 5 лет на всю мебель. В течение этого срока мы устраняем любые производственные дефекты."
+                }
+            }
+        ]
+    }
+    </script>
+
+<div class="max-widget" id="maxWidget">
+    <div class="widget-buttons">
+        <a href="tel:+79181890174" class="widget-btn phone-btn" style="background: #25D366;" aria-label="Позвонить">
+            <img src="png-klev-club-j00b-p-znachok-telefona-trubki-png-8 (1).png" alt="Телефон">
+            <span class="widget-tooltip">+7 (918) 189-01-74</span>
+        </a>
+        <a href="https://max.ru/u/f9LHodD0cOJ4oot9tZUu5HWhNHvaCoajoGJ3lotpN-kotzz1863BuPH5dRY" target="_blank" class="widget-btn" style="background: #2AABEE;" aria-label="Max">
+            <img src="Max_logo_2025.png" alt="Max">
+            <span class="widget-tooltip">Max</span>
+        </a>
+        <a href="https://t.me/Ruslan_Slep" target="_blank" class="widget-btn" style="background: #0088cc;" aria-label="Telegram">
+            <img src="Telegram_logo.svg.webp" alt="Telegram">
+            <span class="widget-tooltip">Telegram</span>
+        </a>
+    </div>
+    <button class="widget-toggle" onclick="document.getElementById('maxWidget').classList.toggle('expanded')" aria-label="Открыть меню">
+        <img src="png-klev-club-j00b-p-znachok-telefona-trubki-png-8 (1).png" alt="Меню">
+    </button>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="/" class="logo">Эксклюзивно</a>
+                <p>Изготавливаем уникальную мебель по индивидуальным проектам с 2020 года.</p>
+            </div>
+            <div class="footer-col"><h4>Каталог</h4><a href="/kitchen/">Кухни</a><a href="/hallway/">Прихожие и шкафы</a><a href="/living/">Гостиные</a><a href="/bedroom/">Спальни</a><a href="/kids/">Детские</a><a href="/office/">Коммерческая мебель</a></div>
+            <div class="footer-col">
+                <h4>Контакты</h4>
+                <a href="tel:+79181890174">+7 (918) 189-01-74</a>
+                <a href="mailto:exclusivnokrd@mail.ru">exclusivnokrd@mail.ru</a>
+                <a href="https://max.ru/u/f9LHodD0cOJ4oot9tZUu5HWhNHvaCoajoGJ3lotpN-kotzz1863BuPH5dRY" target="_blank"><img src="Max_logo_2025.png" style="width:16px;height:16px;vertical-align:middle;margin-right:4px;" alt="Max"> Max</a>
+                <a href="https://t.me/Ruslan_Slep" target="_blank"><img src="Telegram_logo.svg.webp" style="width:16px;height:16px;vertical-align:middle;margin-right:4px;" alt="TG"> Telegram</a>
+            </div>
+        </div>
+        <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px;">
+            <!-- Текст копирайта (слева) -->
+            <span style="flex: 1; min-width: 300px; font-size: 13px; color: #666; line-height: 1.5;">
+                &copy; 2020-2026. Фабрика мебели «Эксклюзивно» - мебельная фабрика, г. Краснодар. Информация на сайте, касающаяся характеристик, стоимости товаров, носит информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями Статьи 437(2) Гражданского кодекса РФ.<br><br>ИП Слепцов Руслан Владимирович · ОГРНИП 325237500495517 · ИНН 231221647730 · Юридический адрес: г. Краснодар, ул. Ипподромная, д. 53/5
+            </span>
+            
+            <!-- Ссылки (справа, вертикально) -->
+            <div style="display: flex; flex-direction: column; gap: 8px; text-align: right; min-width: 250px;">
+                <a href="/consent/" style="display: block; font-size: 13px; color: #666; text-decoration: none;">Согласие на обработку персональных данных</a>
+                <a href="/policy/" style="display: block; font-size: 13px; color: #666; text-decoration: none;">Политика конфиденциальности</a>
+                <a href="/cookie/" style="display: block; font-size: 13px; color: #666; text-decoration: none;">Правила обработки cookie</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="cookie-banner" id="cookieBanner">
+    <p>Мы используем cookie для улучшения работы сайта. Продолжая просмотр, вы соглашаетесь с <a href="/cookie/">Политикой обработки cookie</a>.</p>
+    <button onclick="acceptCookies()">Принять</button>
+</div>
+<script>
+if (localStorage.getItem('cookiesAccepted')) document.getElementById('cookieBanner').style.display = 'none';
+function acceptCookies() { localStorage.setItem('cookiesAccepted', 'true'); document.getElementById('cookieBanner').style.display = 'none'; }
+</script>
+</body>
+</html>
