@@ -187,102 +187,6 @@
         <a href="index.html#contact" class="btn btn-fill">Оставить заявку</a>
     </div>
 </section>
-<div class="max-widget" id="maxWidget">
-    <div class="widget-buttons">
-        <a href="tel:+79181890174" class="widget-btn phone-btn" style="background: #25D366;" aria-label="Позвонить">
-            <img src="png-klev-club-j00b-p-znachok-telefona-trubki-png-8 (1).png" alt="Телефон">
-            <span class="widget-tooltip">+7 (918) 189-01-74</span>
-        </a>
-        <a href="https://max.ru/u/f9LHodD0cOJ4oot9tZUu5HWhNHvaCoajoGJ3lotpN-kotzz1863BuPH5dRY" target="_blank" class="widget-btn" style="background: #2AABEE;" aria-label="Max">
-            <img src="Max_logo_2025.png" alt="Max">
-            <span class="widget-tooltip">Max</span>
-        </a>
-        <a href="https://t.me/Ruslan_Slep" target="_blank" class="widget-btn" style="background: #0088cc;" aria-label="Telegram">
-            <img src="Telegram_logo.svg.webp" alt="Telegram">
-            <span class="widget-tooltip">Telegram</span>
-        </a>
-    </div>
-    <button class="widget-toggle" onclick="document.getElementById('maxWidget').classList.toggle('expanded')" aria-label="Открыть меню">
-        <img src="png-klev-club-j00b-p-znachok-telefona-trubki-png-8 (1).png" alt="Меню">
-    </button>
-</div>
-
-<footer>
-    <div class="container">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <a href="index.html" class="logo">Эксклюзивно</a>
-                <p>Изготавливаем уникальную мебель по индивидуальным проектам с 2020 года.</p>
-            </div>
-            <div class="footer-col"><h4>Каталог</h4><a href="kitchen.html">Кухни</a><a href="hallway.html">Прихожии и шкафы</a><a href="living.html">Гостиные</a><a href="bedroom.html">Спальни</a><a href="kids.html">Детские</a><a href="office.html">Коммерческая мебель</a></div>
-            <div class="footer-col">
-                <h4>Контакты</h4>
-                <a href="tel:+79181890174">+7 (918) 189-01-74</a>
-                <a href="mailto:ruslan.sleptsov.ruslan1@gmail.com">ruslan.sleptsov.ruslan1@gmail.com</a>
-                <a href="https://max.ru/u/f9LHodD0cOJ4oot9tZUu5HWhNHvaCoajoGJ3lotpN-kotzz1863BuPH5dRY" target="_blank">Max</a>
-                <a href="https://t.me/Ruslan_Slep" target="_blank"><img src="Telegram_logo.svg.webp" style="width:16px;height:16px;vertical-align:middle;margin-right:4px;" alt="TG"> Telegram</a>
-            </div>
-        </div>
-        <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px;">
-            <!-- Текст копирайта (слева) -->
-            <span style="flex: 1; min-width: 300px; font-size: 13px; color: #666; line-height: 1.5;">
-                &copy; 2020-2026. Фабрика мебели «Эксклюзивно» - мебельная фабрика, г. Краснодар. Информация на сайте, касающаяся характеристик, стоимости товаров, носит информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями Статьи 437(2) Гражданского кодекса РФ.
-            </span>
-            
-            <!-- Ссылки (справа, вертикально) -->
-            <div style="display: flex; flex-direction: column; gap: 8px; text-align: right; min-width: 250px;">
-                <a href="consent.html" style="display: block; font-size: 13px; color: #666; text-decoration: none;">Согласие на обработку персональных данных</a>
-                <a href="policy.html" style="display: block; font-size: 13px; color: #666; text-decoration: none;">Политика конфиденциальности</a>
-                <a href="cookie.html" style="display: block; font-size: 13px; color: #666; text-decoration: none;">Правила обработки cookie</a>
-            </div>
-        </div>
-    </div>
-<div class="modal" id="modal">
-    <button class="modal-close" onclick="closeModal()">&times;</button>
-    <div class="modal-content">
-        <div class="modal-gallery">
-            <div>
-                <img class="modal-main-img" id="modalImg" src="" alt="">
-                <div class="modal-thumbs" id="modalThumbs"></div>
-            </div>
-            <div class="modal-text">
-                <h2 class="modal-title" id="modalTitle"></h2>
-                <p class="modal-desc" id="modalDesc"></p>
-                <p class="modal-meta" id="modalMeta"></p>
-                <a href="index.html#contact" class="btn btn-fill" onclick="closeModal()">Оставить заявку</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    function toggleNav() { document.getElementById('nav').classList.toggle('active'); }
-    function closeMenu() { document.getElementById('nav').classList.remove('active'); }
-    const products = [
-    { title: "Стол у окна с системой хранения", desc: "Простое и удобное решение для комнаты. Стол расположился у окна — днем естественный свет, вечером — дополнительное освещение. По бокам вместительные ящики с черными ручками. Справа — высокий открытый стеллаж для книг и учебных материалов. Темная столешница контрастирует с белыми фасадами ящиков.", meta: "Фасады: МДФ матовый (белый), ламинат под дерево / Столешница: ЛДСП (темный) / Фурнитура: Blum / Hettich / Особенности: Рабочее место у окна, открытые и закрытые полки, настенные полки", imgs: ["детские/2/2.jpeg"] },
-    { title: "Комплексный мебельный ансамбль, который растет вместе с ребенком", desc: "Детская комната — это не просто помещение, а личная вселенная. Мебельная композиция выстроена вдоль стены. Слева — высокий двустворчатый шкаф с рамочными фасадами и современными черными ручками-скобами. Центральная часть плавно переходит в рабочую зону. Длинная столешница обеспечивает простор для ноутбука и тетрадей. Фоном служит масштабное панно с винтажным бипланом.", meta: "Фасады: МДФ с классической фрезеровкой (белый матовый), шпон/ЛДСП под темное дерево / Столешница и полки: Износостойкий ламинат (темный орех) / Фурнитура: современные черные ручки / Особенности: Интеграция шкафа и рабочего стола, открытые витрины, контрастная цветовая схема", imgs: ["детские/3/1.jpg","детские/3/2.jpg"] },
-    { title: "Система хранения с комбинированным наполнением", desc: "Элегантная классика с ярким характером. Белоснежные фасады с классической фрезеровкой (филенками), завершенные декоративным карнизом. Главная изюминка — открытый стеллаж с ярко-желтым интерьером. Нижний комод с шестью вместительными ящиками. Зеркальная вставка, ручки в стиле ретро с бронзовым покрытием.", meta: "Фасады: МДФ с классической фрезеровкой, эмаль (белый), интерьер — эмаль (желтый) / Особенности: Декоративный карниз (корона), зеркальная вставка, комбинирование закрытых и открытых зон / Фурнитура: Ручки «ретро» (античная бронза/латунь), направляющие с доводчиками", imgs: ["детские/6/1.jpg","детские/6/2.jpg"] },
-    { title: "Комплексный мебельный ансамбль для спальни-кабинета", desc: "Этот проект демонстрирует, как объединить несколько функциональных зон в единую стилистическую композицию. Распашной шкаф с глухими и зеркальной створками. Антресольные фасады украшены декоративной X-образной фрезеровкой. Рабочая зона у окна с широкой столешницей из светлого дерева. Витрина с фасадами из тонированного стекла и блоком выдвижных ящиков.", meta: "Фасады: МДФ под покраску (белый матовый), стекло с тонировкой, декоративная X-фрезеровка / Столешница: ЛДСП/шпон под светлое дерево / Особенности: Зеркальная створка, открытые полки, витрина с подсветкой/без / Фурнитура: Классические накладные ручки под латунь/золото", imgs: ["детские/8/1.jpg","детские/8/2.jpg"] },
-    { title: "Встроенная мебельная стенка с рифлеными фасадами и рабочей зоной", desc: "Многофункциональный ансамбль: шкаф с вертикальной рифленой фрезеровкой, подвесная ТВ-зона и длинный рабочий стол. Двухцветное решение (белые фасады + серый тон). Отсутствие видимой фурнитуры, темный цоколь, продуманная эргономика. Интегрированная система вдоль стены с акцентом на фактуру и геометрию.", meta: "Фасады: МДФ с вертикальной рифленой фрезеровкой (белый матовый), гладкие матовые панели / Столешницы/Базы: ЛДСП/компакт-ламинат (серый тон) / Особенности: Подвесная конструкция, система открывания без ручек, комбинированное хранение, интеграция ТВ и рабочего стола / Фурнитура: Скрытые механизмы (push-to-open), направляющие полного выдвижения", imgs: ["детские/9/1.jpg","детские/9/2.jpg"] },
-    { title: "Архитектурный шкаф с персональной витриной", desc: "Шкаф занимает стену от пола до потолка, но благодаря вертикальной фрезеровке (ламель) на фасадах он не выглядит тяжелым. Центральная открытая ниша играет ключевую роль — служит личной галереей владельца. Верхний ярус (антресоли) выполнен гладким, что создает приятный контраст с рифлеными нижними дверями. Светло-серый жемчужный оттенок фасадов.", meta: "Фасады: МДФ с вертикальной фрезеровкой (нижний ярус), гладкий МДФ (антресоли) / Цвет: Светлый серый Жемчужный / Наполнение: Закрытые секции, открытая ниша, полки / Особенности: Интеграция до потолка, контраст гладких и фактурных поверхностей / Фурнитура: Скрытая (Push-to-open)", imgs: ["детские/11/1.jpg"] }
-];
-
-    function openModal(i) {
-        const p = products[i];
-        document.getElementById('modalTitle').textContent = p.title;
-        document.getElementById('modalDesc').textContent = p.desc;
-        document.getElementById('modalMeta').textContent = p.meta;
-        document.getElementById('modalImg').src = p.imgs[0];
-        document.getElementById('modalThumbs').innerHTML = p.imgs.map((img, idx) => `<img class="modal-thumb${idx===0?' active':''}" src="${img}" onclick="setMainImg('${img}', this)">`).join('');
-        document.getElementById('modal').classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-    function closeModal() { document.getElementById('modal').classList.remove('active'); document.body.style.overflow = ''; }
-    function setMainImg(src, el) { document.getElementById('modalImg').src = src; document.querySelectorAll('.modal-thumb').forEach(t => t.classList.remove('active')); el.classList.add('active'); }
-    document.querySelectorAll('.product-card').forEach((card, i) => { card.addEventListener('click', (e) => { e.preventDefault(); openModal(i); }); });
-    document.getElementById('modal').addEventListener('click', (e) => { if (e.target.id === 'modal') closeModal(); });
-</script>
-</footer>
 
 <section class="cross-links" style="padding: 60px 0; background: var(--bg-secondary);">
     <div class="container" style="text-align: center;">
@@ -345,6 +249,105 @@
         ]
     }
     </script>
+
+<div class="max-widget" id="maxWidget">
+    <div class="widget-buttons">
+        <a href="tel:+79181890174" class="widget-btn phone-btn" style="background: #25D366;" aria-label="Позвонить">
+            <img src="png-klev-club-j00b-p-znachok-telefona-trubki-png-8 (1).png" alt="Телефон">
+            <span class="widget-tooltip">+7 (918) 189-01-74</span>
+        </a>
+        <a href="https://max.ru/u/f9LHodD0cOJ4oot9tZUu5HWhNHvaCoajoGJ3lotpN-kotzz1863BuPH5dRY" target="_blank" class="widget-btn" style="background: #2AABEE;" aria-label="Max">
+            <img src="Max_logo_2025.png" alt="Max">
+            <span class="widget-tooltip">Max</span>
+        </a>
+        <a href="https://t.me/Ruslan_Slep" target="_blank" class="widget-btn" style="background: #0088cc;" aria-label="Telegram">
+            <img src="Telegram_logo.svg.webp" alt="Telegram">
+            <span class="widget-tooltip">Telegram</span>
+        </a>
+    </div>
+    <button class="widget-toggle" onclick="document.getElementById('maxWidget').classList.toggle('expanded')" aria-label="Открыть меню">
+        <img src="png-klev-club-j00b-p-znachok-telefona-trubki-png-8 (1).png" alt="Меню">
+    </button>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">Эксклюзивно</a>
+                <p>Изготавливаем уникальную мебель по индивидуальным проектам с 2020 года.</p>
+            </div>
+            <div class="footer-col"><h4>Каталог</h4><a href="kitchen.html">Кухни</a><a href="hallway.html">Прихожии и шкафы</a><a href="living.html">Гостиные</a><a href="bedroom.html">Спальни</a><a href="kids.html">Детские</a><a href="office.html">Коммерческая мебель</a></div>
+            <div class="footer-col">
+                <h4>Контакты</h4>
+                <a href="tel:+79181890174">+7 (918) 189-01-74</a>
+                <a href="mailto:ruslan.sleptsov.ruslan1@gmail.com">ruslan.sleptsov.ruslan1@gmail.com</a>
+                <a href="https://max.ru/u/f9LHodD0cOJ4oot9tZUu5HWhNHvaCoajoGJ3lotpN-kotzz1863BuPH5dRY" target="_blank">Max</a>
+                <a href="https://t.me/Ruslan_Slep" target="_blank"><img src="Telegram_logo.svg.webp" style="width:16px;height:16px;vertical-align:middle;margin-right:4px;" alt="TG"> Telegram</a>
+            </div>
+        </div>
+        <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px;">
+            <!-- Текст копирайта (слева) -->
+            <span style="flex: 1; min-width: 300px; font-size: 13px; color: #666; line-height: 1.5;">
+                &copy; 2020-2026. Фабрика мебели «Эксклюзивно» - мебельная фабрика, г. Краснодар. Информация на сайте, касающаяся характеристик, стоимости товаров, носит информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями Статьи 437(2) Гражданского кодекса РФ.
+            </span>
+            
+            <!-- Ссылки (справа, вертикально) -->
+            <div style="display: flex; flex-direction: column; gap: 8px; text-align: right; min-width: 250px;">
+                <a href="consent.html" style="display: block; font-size: 13px; color: #666; text-decoration: none;">Согласие на обработку персональных данных</a>
+                <a href="policy.html" style="display: block; font-size: 13px; color: #666; text-decoration: none;">Политика конфиденциальности</a>
+                <a href="cookie.html" style="display: block; font-size: 13px; color: #666; text-decoration: none;">Правила обработки cookie</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <div class="modal-content">
+        <div class="modal-gallery">
+            <div>
+                <img class="modal-main-img" id="modalImg" src="" alt="">
+                <div class="modal-thumbs" id="modalThumbs"></div>
+            </div>
+            <div class="modal-text">
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <p class="modal-desc" id="modalDesc"></p>
+                <p class="modal-meta" id="modalMeta"></p>
+                <a href="index.html#contact" class="btn btn-fill" onclick="closeModal()">Оставить заявку</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function toggleNav() { document.getElementById('nav').classList.toggle('active'); }
+const products = [
+    { title: "Стол у окна с системой хранения", desc: "Простое и удобное решение для комнаты. Стол расположился у окна — днем естественный свет, вечером — дополнительное освещение. По бокам вместительные ящики с черными ручками. Справа — высокий открытый стеллаж для книг и учебных материалов. Темная столешница контрастирует с белыми фасадами ящиков.", meta: "Фасады: МДФ матовый (белый), ламинат под дерево / Столешница: ЛДСП (темный) / Фурнитура: Blum / Hettich / Особенности: Рабочее место у окна, открытые и закрытые полки, настенные полки", imgs: ["детские/2/2.jpeg"] },
+    { title: "Комплексный мебельный ансамбль, который растет вместе с ребенком", desc: "Детская комната — это не просто помещение, а личная вселенная. Мебельная композиция выстроена вдоль стены. Слева — высокий двустворчатый шкаф с рамочными фасадами и современными черными ручками-скобами. Центральная часть плавно переходит в рабочую зону. Длинная столешница обеспечивает простор для ноутбука и тетрадей. Фоном служит масштабное панно с винтажным бипланом.", meta: "Фасады: МДФ с классической фрезеровкой (белый матовый), шпон/ЛДСП под темное дерево / Столешница и полки: Износостойкий ламинат (темный орех) / Фурнитура: современные черные ручки / Особенности: Интеграция шкафа и рабочего стола, открытые витрины, контрастная цветовая схема", imgs: ["детские/3/1.jpg","детские/3/2.jpg"] },
+    { title: "Система хранения с комбинированным наполнением", desc: "Элегантная классика с ярким характером. Белоснежные фасады с классической фрезеровкой (филенками), завершенные декоративным карнизом. Главная изюминка — открытый стеллаж с ярко-желтым интерьером. Нижний комод с шестью вместительными ящиками. Зеркальная вставка, ручки в стиле ретро с бронзовым покрытием.", meta: "Фасады: МДФ с классической фрезеровкой, эмаль (белый), интерьер — эмаль (желтый) / Особенности: Декоративный карниз (корона), зеркальная вставка, комбинирование закрытых и открытых зон / Фурнитура: Ручки «ретро» (античная бронза/латунь), направляющие с доводчиками", imgs: ["детские/6/1.jpg","детские/6/2.jpg"] },
+    { title: "Комплексный мебельный ансамбль для спальни-кабинета", desc: "Этот проект демонстрирует, как объединить несколько функциональных зон в единую стилистическую композицию. Распашной шкаф с глухими и зеркальной створками. Антресольные фасады украшены декоративной X-образной фрезеровкой. Рабочая зона у окна с широкой столешницей из светлого дерева. Витрина с фасадами из тонированного стекла и блоком выдвижных ящиков.", meta: "Фасады: МДФ под покраску (белый матовый), стекло с тонировкой, декоративная X-фрезеровка / Столешница: ЛДСП/шпон под светлое дерево / Особенности: Зеркальная створка, открытые полки, витрина с подсветкой/без / Фурнитура: Классические накладные ручки под латунь/золото", imgs: ["детские/8/1.jpg","детские/8/2.jpg"] },
+    { title: "Встроенная мебельная стенка с рифлеными фасадами и рабочей зоной", desc: "Многофункциональный ансамбль: шкаф с вертикальной рифленой фрезеровкой, подвесная ТВ-зона и длинный рабочий стол. Двухцветное решение (белые фасады + серый тон). Отсутствие видимой фурнитуры, темный цоколь, продуманная эргономика. Интегрированная система вдоль стены с акцентом на фактуру и геометрию.", meta: "Фасады: МДФ с вертикальной рифленой фрезеровкой (белый матовый), гладкие матовые панели / Столешницы/Базы: ЛДСП/компакт-ламинат (серый тон) / Особенности: Подвесная конструкция, система открывания без ручек, комбинированное хранение, интеграция ТВ и рабочего стола / Фурнитура: Скрытые механизмы (push-to-open), направляющие полного выдвижения", imgs: ["детские/9/1.jpg","детские/9/2.jpg"] },
+    { title: "Архитектурный шкаф с персональной витриной", desc: "Шкаф занимает стену от пола до потолка, но благодаря вертикальной фрезеровке (ламель) на фасадах он не выглядит тяжелым. Центральная открытая ниша играет ключевую роль — служит личной галереей владельца. Верхний ярус (антресоли) выполнен гладким, что создает приятный контраст с рифлеными нижними дверями. Светло-серый жемчужный оттенок фасадов.", meta: "Фасады: МДФ с вертикальной фрезеровкой (нижний ярус), гладкий МДФ (антресоли) / Цвет: Светлый серый Жемчужный / Наполнение: Закрытые секции, открытая ниша, полки / Особенности: Интеграция до потолка, контраст гладких и фактурных поверхностей / Фурнитура: Скрытая (Push-to-open)", imgs: ["детские/11/1.jpg"] }
+];
+
+    function openModal(i) {
+        const p = products[i];
+        document.getElementById('modalTitle').textContent = p.title;
+        document.getElementById('modalDesc').textContent = p.desc;
+        document.getElementById('modalMeta').textContent = p.meta;
+        document.getElementById('modalImg').src = p.imgs[0];
+        document.getElementById('modalThumbs').innerHTML = p.imgs.map((img, idx) => `<img class="modal-thumb${idx===0?' active':''}" src="${img}" onclick="setMainImg('${img}', this)">`).join('');
+        document.getElementById('modal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeModal() { document.getElementById('modal').classList.remove('active'); document.body.style.overflow = ''; }
+    function setMainImg(src, el) { document.getElementById('modalImg').src = src; document.querySelectorAll('.modal-thumb').forEach(t => t.classList.remove('active')); el.classList.add('active'); }
+    document.querySelectorAll('.product-card').forEach((card, i) => { card.addEventListener('click', (e) => { e.preventDefault(); openModal(i); }); });
+    document.getElementById('modal').addEventListener('click', (e) => { if (e.target.id === 'modal') closeModal(); });
+</script>
+
+
 
 </body>
 </html>
